@@ -1903,6 +1903,16 @@ wMinutesSince:: db
 wHoursSince:: db
 wDaysSince:: db
 
+	ds 7
+
+wTempLoopCounter:: db
+
+
+SECTION "16-bit WRAM home data", WRAM0
+; align to $20
+
+wConversionTableBitmap:: ds $20
+
 
 SECTION "WRAM 1", WRAMX
 
@@ -3538,6 +3548,11 @@ wPokeAnimBitmaskCurBit:: db
 wPokeAnimBitmaskBuffer:: ds 7
 	ds 2
 wPokeAnimStructEnd::
+
+
+SECTION "16-bit WRAM tables", WRAMX
+; align this section to $100
+	wram_conversion_table wPokemonIndexTable, MON_TABLE
 
 
 SECTION "Battle Tower RAM", WRAMX
