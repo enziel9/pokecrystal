@@ -106,6 +106,12 @@ SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
+
+; "Sprites 2" no longer has room for these once merged with the 260+
+; species / MBC30 work (see layout.link's ROMX $83) - moved to their own
+; section rather than shrinking anything already there.
+SECTION "Sprites 3", ROMX
+
 WoodpileSpriteGFX::            INCBIN "gfx/sprites/woodpile.2bpp"
 OrderSoldierSpriteGFX::         INCBIN "gfx/sprites/order_soldier.2bpp"
 OrderChosenSpriteGFX::          INCBIN "gfx/sprites/order_soldier_chosen.2bpp"

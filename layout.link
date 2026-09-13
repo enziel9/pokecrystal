@@ -337,6 +337,8 @@ ROMX $81
 	"Cries"
 ROMX $82
 	"Pics 25"
+ROMX $83
+	"Sprites 3"
 WRAM0
 	"Stack"
 	"Audio RAM"
