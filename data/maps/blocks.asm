@@ -1046,4 +1046,7 @@ BetaBlank_Blocks: ; unreferenced
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
 
+VillaggioIniziale_Blocks:
+	INCBIN "maps/VillaggioIniziale.blk"
+
 ENDSECTION

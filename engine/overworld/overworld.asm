@@ -666,3 +666,105 @@ INCLUDE "data/sprites/sprite_mons.asm"
 INCLUDE "data/maps/outdoor_sprites.asm"
 
 INCLUDE "data/sprites/sprites.asm"
+
+GetOverworldSpriteForSpecies::
+; input: a = species
+; output: if a walking overworld sprite exists for it (SpriteMons table),
+;         a = that SPRITE_* constant and carry is clear.
+;         otherwise, carry is set.
+	ld d, a
+	ld hl, SpriteMons
+	ld b, NUM_POKEMON_SPRITES
+	ld c, 0
+.loop
+	ld a, [hli]
+	cp d
+	jr z, .found
+	inc c
+	dec b
+	jr nz, .loop
+	scf
+	ret
+
+.found
+	ld a, c
+	add SPRITE_POKEMON
+	ret
+
+InjectPartyLeadFollowerObject::
+; Adds the lead party mon as one extra map object (in the first free
+; wMapNObject slot) so StartPartyLeadFollowerObject can attach it to the
+; player with the existing follow engine. Silently does nothing if there's
+; no party, the species has no walking overworld sprite (SpriteMons only
+; covers ~34 species), or the map is already too full of static objects
+; (kept clear of the NUM_OBJECTS boundary bug documented for ReadObjectEvents,
+; see docs/bugs_and_glitches.md).
+	xor a
+	ld [wFollowerObjectIndex], a
+
+	ld a, [wPartyCount]
+	and a
+	ret z
+
+	ld a, [wCurMapObjectEventCount]
+	cp 15
+	ret nc
+
+	ld a, [wPartySpecies]
+	call GetOverworldSpriteForSpecies
+	ret c
+	ld e, a
+
+	ld a, [wCurMapObjectEventCount]
+	ld hl, wMap1Object
+	ld bc, MAPOBJECT_LENGTH
+	call AddNTimes
+
+	ld a, [wCurMapObjectEventCount]
+	inc a
+	ld [wCurMapObjectEventCount], a
+	ld [wFollowerObjectIndex], a
+
+	ld a, -1
+	ld [hli], a ; MAPOBJECT_OBJECT_STRUCT_ID: not visible yet
+	ld a, e
+	ld [hli], a ; MAPOBJECT_SPRITE
+	ld a, [wYCoord]
+	add 4
+	ld [hli], a ; MAPOBJECT_Y_COORD
+	ld a, [wXCoord]
+	add 4
+	ld [hli], a ; MAPOBJECT_X_COORD
+	ld a, SPRITEMOVEDATA_STILL
+	ld [hli], a ; MAPOBJECT_MOVEMENT (StartFollow switches this to FOLLOWING)
+	xor a
+	ld [hli], a ; MAPOBJECT_RADIUS (0, 0)
+	ld a, -1
+	ld [hli], a ; MAPOBJECT_HOUR_1: always appear
+	ld [hli], a ; MAPOBJECT_HOUR_2
+	xor a
+	ld [hli], a ; MAPOBJECT_PALETTE/TYPE: default palette, OBJECTTYPE_SCRIPT
+	ld [hli], a ; MAPOBJECT_SIGHT_RANGE
+	ld a, LOW(PartyLeadFollowerScript)
+	ld [hli], a
+	ld a, HIGH(PartyLeadFollowerScript)
+	ld [hli], a ; MAPOBJECT_SCRIPT_POINTER
+	ld a, -1
+	ld [hli], a
+	ld [hl], a ; MAPOBJECT_EVENT_FLAG: always appear
+	ret
+
+StartPartyLeadFollowerObject::
+; Must run after InitializeVisibleSprites, so the object injected above has
+; already been promoted to a visible OBJECT_STRUCT (StartFollow's
+; CheckObjectVisibility requires that).
+	ld a, [wFollowerObjectIndex]
+	and a
+	ret z
+	ld c, a
+	ld b, 0 ; PLAYER
+	farcall StartFollow
+	ret
+
+PartyLeadFollowerScript:
+	end

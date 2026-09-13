@@ -78,8 +78,10 @@ SuspendMapAnims:
 LoadMapObjects:
 	ld a, MAPCALLBACK_OBJECTS
 	call RunMapCallback
+	call InjectPartyLeadFollowerObject
 	farcall LoadObjectMasks
 	farcall InitializeVisibleSprites
+	call StartPartyLeadFollowerObject
 	ret
 
 MapSetup_DummyFunction: ; unreferenced

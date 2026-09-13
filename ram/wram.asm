@@ -3297,7 +3297,8 @@ wCurMapSceneScriptsPointer:: dw
 wCurMapCallbackCount:: db
 wCurMapCallbacksPointer:: dw
 
-	ds 2
+wFollowerObjectIndex:: db ; 1-based map object index of the injected party-lead follower on this map, or 0 if none
+	ds 1
 
 ; Sprite id of each decoration
 wDecoBed::           db

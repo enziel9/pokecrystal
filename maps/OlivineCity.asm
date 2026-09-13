@@ -1,8 +1,4 @@
 	object_const_def
-	const OLIVINECITY_SAILOR1
-	const OLIVINECITY_STANDING_YOUNGSTER
-	const OLIVINECITY_SAILOR2
-	const OLIVINECITY_OLIVINE_RIVAL
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -22,52 +18,46 @@ OlivineCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_OLIVINE
 	endcallback
 
-OlivineCityRivalSceneTop:
-	turnobject PLAYER, LEFT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
-	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesTopMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
+OlivineCitySoldier1Script:
 	opentext
-	writetext OlivineCityRivalText
+	writetext OlivineCitySoldier1Text
 	waitbutton
 	closetext
-	applymovement PLAYER, OlivineCityPlayerStepsAsideTopMovement
-	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesTopMovement
-	setscene SCENE_OLIVINECITY_NOOP
-	disappear OLIVINECITY_OLIVINE_RIVAL
-	special RestartMapMusic
-	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
-	special LoadUsedSpritesGFX
 	end
 
-OlivineCityRivalSceneBottom:
-	turnobject PLAYER, LEFT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	special FadeOutMusic
-	pause 15
-	playsound SFX_ENTER_DOOR
-	appear OLIVINECITY_OLIVINE_RIVAL
-	waitsfx
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
+OlivineCitySoldier2Script:
 	opentext
-	writetext OlivineCityRivalText
+	writetext OlivineCitySoldier2Text
 	waitbutton
 	closetext
-	applymovement PLAYER, OlivineCityPlayerStepsAsideBottomMovement
-	turnobject PLAYER, RIGHT
-	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalLeavesBottomMovement
-	disappear OLIVINECITY_OLIVINE_RIVAL
-	setscene SCENE_OLIVINECITY_NOOP
-	special RestartMapMusic
-	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GUY
-	special LoadUsedSpritesGFX
+	end
+
+OlivineCitySoldier3Script:
+	opentext
+	writetext OlivineCitySoldier3Text
+	waitbutton
+	closetext
+	end
+
+OlivineCityChosen1Script:
+	opentext
+	writetext OlivineCityChosen1Text
+	waitbutton
+	closetext
+	end
+
+OlivineCityChosen2Script:
+	opentext
+	writetext OlivineCityChosen2Text
+	waitbutton
+	closetext
+	end
+
+OlivineCityOfficerScript:
+	opentext
+	writetext OlivineCityOfficerText
+	waitbutton
+	closetext
 	end
 
 OlivineCitySailor1Script:
@@ -113,96 +103,47 @@ OlivineCityPokecenterSign:
 OlivineCityMartSign:
 	jumpstd MartSignScript
 
-OlivineCityRivalApproachesTopMovement:
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step_end
+OlivineCitySoldier1Text:
+	text "Circolare."
 
-OlivineCityRivalApproachesBottomMovement:
-	step DOWN
-	step DOWN
-	step RIGHT
-	step RIGHT
-	step_end
+	para "Nessuno spettacolo"
+	line "da vedere qui."
+	done
 
-OlivineCityRivalLeavesTopMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
+OlivineCitySoldier2Text:
+	text "L'Ordine veglia"
+	line "su Olivine."
+	done
 
-OlivineCityRivalLeavesBottomMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
+OlivineCitySoldier3Text:
+	text "Il porto e' sotto"
+	line "controllo."
+	done
 
-OlivineCityPlayerStepsAsideTopMovement:
-	step DOWN
-	turn_head UP
-	step_end
+OlivineCityChosen1Text:
+	text "Il deposito e'"
+	line "riservato."
 
-OlivineCityPlayerStepsAsideBottomMovement:
-	step UP
-	turn_head DOWN
-	step_end
+	para "Non avvicinarti"
+	line "oltre."
+	done
 
-OlivineCityRivalText:
-	text "…"
+OlivineCityChosen2Text:
+	text "Abbiamo ordini"
+	line "precisi."
 
-	para "You again?"
+	para "Meglio non fare"
+	line "domande."
+	done
 
-	para "There's no need to"
-	line "panic. I don't"
+OlivineCityOfficerText:
+	text "Il faro resta"
+	line "sotto la nostra"
+	cont "sorveglianza."
 
-	para "bother with wimps"
-	line "like you."
-
-	para "Speaking of weak-"
-	line "lings, the city's"
-
-	para "GYM LEADER isn't"
-	line "here."
-
-	para "Supposedly taking"
-	line "care of a sick"
-
-	para "#MON at the"
-	line "LIGHTHOUSE."
-
-	para "Humph! Boo-hoo!"
-	line "Just let sick"
-	cont "#MON go!"
-
-	para "A #MON that"
-	line "can't battle is"
-	cont "worthless!"
-
-	para "Why don't you go"
-	line "train at the"
-	cont "LIGHTHOUSE?"
-
-	para "Who knows. It may"
-	line "make you a bit"
-	cont "less weak!"
+	para "Nessuno entra ed"
+	line "esce senza"
+	cont "autorizzazione."
 	done
 
 OlivineCitySailor1Text:
@@ -262,12 +203,11 @@ OlivineCityPortSignText:
 	done
 
 OlivineGymSignText:
-	text "OLIVINE CITY"
-	line "#MON GYM"
-	cont "LEADER: JASMINE"
+	text "DEPOSITO"
+	line "DELL'ORDINE"
 
-	para "The Steel-Clad"
-	line "Defense Girl"
+	para "Accesso"
+	line "riservato."
 	done
 
 OlivineLighthouseSignText:
@@ -291,11 +231,7 @@ OlivineCity_MapEvents:
 
 	def_warp_events
 	warp_event 13, 21, OLIVINE_POKECENTER_1F, 1
-	warp_event 10, 11, OLIVINE_GYM, 1
-	warp_event 25, 11, OLIVINE_TIMS_HOUSE, 1
-	warp_event  0,  0, OLIVINE_HOUSE_BETA, 1 ; inaccessible
-	warp_event 29, 11, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1
-	warp_event 13, 15, OLIVINE_GOOD_ROD_HOUSE, 1
+	warp_event  9, 11, OLIVINE_HOUSE_BETA, 1
 	warp_event  7, 21, OLIVINE_CAFE, 1
 	warp_event 19, 17, OLIVINE_MART, 2
 	warp_event 29, 27, OLIVINE_LIGHTHOUSE_1F, 1
@@ -303,8 +239,6 @@ OlivineCity_MapEvents:
 	warp_event 20, 27, OLIVINE_PORT_PASSAGE, 2
 
 	def_coord_events
-	coord_event 13, 12, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneTop
-	coord_event 13, 13, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityRivalSceneBottom
 
 	def_bg_events
 	bg_event 17, 11, BGEVENT_READ, OlivineCitySign
@@ -316,7 +250,9 @@ OlivineCity_MapEvents:
 	bg_event 20, 17, BGEVENT_READ, OlivineCityMartSign
 
 	def_object_events
-	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
-	object_event 20, 13, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
-	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
-	object_event 10, 11, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event 26, 27, SPRITE_ORDER_SOLDIER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySoldier1Script, -1
+	object_event 20, 13, SPRITE_ORDER_SOLDIER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySoldier2Script, -1
+	object_event 17, 21, SPRITE_ORDER_SOLDIER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySoldier3Script, -1
+	object_event  8, 12, SPRITE_ORDER_CHOSEN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityChosen1Script, -1
+	object_event 12, 12, SPRITE_ORDER_CHOSEN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityChosen2Script, -1
+	object_event 28, 28, SPRITE_ORDER_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityOfficerScript, -1

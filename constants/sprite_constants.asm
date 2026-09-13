@@ -104,6 +104,11 @@
 	const SPRITE_ENTEI ; 64
 	const SPRITE_RAIKOU ; 65
 	const SPRITE_STANDING_YOUNGSTER ; 66
+	const SPRITE_WOODPILE ; 67
+	const SPRITE_ORDER_SOLDIER ; 68
+	const SPRITE_ORDER_CHOSEN ; 69
+	const SPRITE_ORDER_OFFICER ; 6a
+	const SPRITE_ORDER_COMMANDER ; 6b
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -167,3 +172,4 @@ DEF SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
+	const SPRITE_VILLAGGIO_STARTER ; fd

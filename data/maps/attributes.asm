@@ -220,6 +220,8 @@ ENDM
 	connection south, OlivineCity, OLIVINE_CITY, -5
 	connection east, Route38, ROUTE_38, 0
 
+	map_attributes VillaggioIniziale, VILLAGGIO_INIZIALE, $05
+
 	map_attributes Route40, ROUTE_40, $35
 	connection south, Route41, ROUTE_41, -15
 	connection east, OlivineCity, OLIVINE_CITY, -9
