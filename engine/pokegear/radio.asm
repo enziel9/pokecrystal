@@ -654,13 +654,12 @@ PokedexShow1:
 		cp NUM_POKEMON
 		jr nc, .loop
 	endc
+	inc a
 	ld c, a
 	push bc
-	ld a, c
 	call CheckCaughtMon
 	pop bc
 	jr z, .loop
-	inc c
 	ld a, c
 	ld [wCurPartySpecies], a
 	ld [wNamedObjectIndex], a

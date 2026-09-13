@@ -617,12 +617,22 @@ Continue_DisplayPokedexNumCaught:
 	ret z
 	push hl
 	ld hl, wPokedexCaught
-	ld b, (NUM_POKEMON + 7) / 8
-	call CountSetBits
+	ld bc, wEndPokedexCaught - wPokedexCaught
+	call CountSetBits16
 	pop hl
-	ld de, wNumSetBits
-	lb bc, 1, 3
-	jp PrintNum
+	ld a, b
+	ld b, c
+	ld c, a
+	push bc
+	push hl
+	ld hl, sp + 2
+	ld d, h
+	ld e, l
+	lb bc, 2, 3
+	pop hl
+	call PrintNum
+	pop bc
+	ret
 
 Continue_DisplayGameTime:
 	ld de, wGameTimeHours

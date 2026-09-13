@@ -294,7 +294,6 @@ EvolveAfterBattle_MasterLoop:
 	ld [wMonType], a
 	call LearnLevelMoves
 	ld a, [wTempSpecies]
-	dec a
 	call SetSeenAndCaughtMon
 
 	ld a, [wTempSpecies]
