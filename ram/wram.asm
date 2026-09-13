@@ -740,13 +740,10 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: dw
 wDexCurLocation:: db
-if DEF(_CRYSTAL11)
+; Referenced unconditionally by engine/pokedex/pokedex.asm et al., so this
+; byte must exist in every build variant, not just _CRYSTAL11.
 wPokedexStatus:: db
 wPokedexDataEnd::
-else
-wPokedexDataEnd::
-	ds 1
-endc
 wPokedexDisplayNumber:: dw
 wDexLastSeenIndex:: db ; index into wPokedexSeen containing the last non-zero value
 wDexLastSeenValue:: db ; value at index

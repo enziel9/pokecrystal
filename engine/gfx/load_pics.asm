@@ -137,8 +137,9 @@ GetPicIndirectPointer:
 	jr .done
 
 GetFrontpicPointer:
-	; These are assumed to be at the same address in their respective banks.
-	assert PokemonPicPointers == UnownPicPointers
+	; GetPicIndirectPointer sets hl/d separately per branch (Unown vs not),
+	; so PokemonPicPointers and UnownPicPointers no longer need to share an
+	; address - unlike vanilla pret/pokecrystal (see docs/design_flaws.md).
 	call GetPicIndirectPointer
 	ld a, d
 	call GetFarByte
