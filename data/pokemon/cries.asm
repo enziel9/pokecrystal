@@ -257,4 +257,17 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
+	; No new cry samples exist for these in this engine yet, so each reuses
+	; its Johto starter counterpart's real cry base and tuning (grass/fire/
+	; water), same pattern as this table already uses for shared cries
+	; within a native evolution line.
+	mon_cry CRY_CHIKORITA,   -16,  176 ; TREECKO
+	mon_cry CRY_CYNDAQUIL,   839,  128 ; TORCHIC
+	mon_cry CRY_TOTODILE,   1132,  232 ; MUDKIP
+	mon_cry CRY_CHIKORITA,   -16,  176 ; TURTWIG
+	mon_cry CRY_CYNDAQUIL,   839,  128 ; CHIMCHAR
+	mon_cry CRY_TOTODILE,   1132,  232 ; PIPLUP
+	mon_cry CRY_CHIKORITA,   -16,  176 ; SNIVY
+	mon_cry CRY_CYNDAQUIL,   839,  128 ; TEPIG
+	mon_cry CRY_TOTODILE,   1132,  232 ; OSHAWOTT
 	assert_table_length NUM_POKEMON
