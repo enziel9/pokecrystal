@@ -780,6 +780,25 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
+TreeckoFrontpic:     INCBIN "gfx/pokemon/treecko/front.animated.2bpp.lz"
+TreeckoBackpic:      INCBIN "gfx/pokemon/treecko/back.2bpp.lz"
+TorchicFrontpic:     INCBIN "gfx/pokemon/torchic/front.animated.2bpp.lz"
+TorchicBackpic:      INCBIN "gfx/pokemon/torchic/back.2bpp.lz"
+MudkipFrontpic:      INCBIN "gfx/pokemon/mudkip/front.animated.2bpp.lz"
+MudkipBackpic:       INCBIN "gfx/pokemon/mudkip/back.2bpp.lz"
+TurtwigFrontpic:     INCBIN "gfx/pokemon/turtwig/front.animated.2bpp.lz"
+TurtwigBackpic:      INCBIN "gfx/pokemon/turtwig/back.2bpp.lz"
+ChimcharFrontpic:    INCBIN "gfx/pokemon/chimchar/front.animated.2bpp.lz"
+ChimcharBackpic:     INCBIN "gfx/pokemon/chimchar/back.2bpp.lz"
+PiplupFrontpic:      INCBIN "gfx/pokemon/piplup/front.animated.2bpp.lz"
+PiplupBackpic:       INCBIN "gfx/pokemon/piplup/back.2bpp.lz"
+SnivyFrontpic:       INCBIN "gfx/pokemon/snivy/front.animated.2bpp.lz"
+SnivyBackpic:        INCBIN "gfx/pokemon/snivy/back.2bpp.lz"
+TepigFrontpic:       INCBIN "gfx/pokemon/tepig/front.animated.2bpp.lz"
+TepigBackpic:        INCBIN "gfx/pokemon/tepig/back.2bpp.lz"
+OshawottFrontpic:    INCBIN "gfx/pokemon/oshawott/front.animated.2bpp.lz"
+OshawottBackpic:     INCBIN "gfx/pokemon/oshawott/back.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 SECTION "Pics 22", ROMX

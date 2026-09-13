@@ -263,3 +263,15 @@ TyranitarPokedexEntry::  INCLUDE "data/pokemon/dex_entries/tyranitar.asm"
 LugiaPokedexEntry::      INCLUDE "data/pokemon/dex_entries/lugia.asm"
 HoOhPokedexEntry::       INCLUDE "data/pokemon/dex_entries/ho_oh.asm"
 CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"
+TreeckoPokedexEntry::    INCLUDE "data/pokemon/dex_entries/treecko.asm"
+TorchicPokedexEntry::    INCLUDE "data/pokemon/dex_entries/torchic.asm"
+MudkipPokedexEntry::     INCLUDE "data/pokemon/dex_entries/mudkip.asm"
+TurtwigPokedexEntry::    INCLUDE "data/pokemon/dex_entries/turtwig.asm"
+ChimcharPokedexEntry::   INCLUDE "data/pokemon/dex_entries/chimchar.asm"
+
+SECTION "Pokedex Entries 257-260", ROMX
+
+PiplupPokedexEntry::     INCLUDE "data/pokemon/dex_entries/piplup.asm"
+SnivyPokedexEntry::      INCLUDE "data/pokemon/dex_entries/snivy.asm"
+TepigPokedexEntry::      INCLUDE "data/pokemon/dex_entries/tepig.asm"
+OshawottPokedexEntry::   INCLUDE "data/pokemon/dex_entries/oshawott.asm"

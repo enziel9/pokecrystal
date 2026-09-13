@@ -232,6 +232,8 @@ GetDexEntryPointer:
 	ld a, b
 	call GetPokemonIndexFromID
 	dec hl
+	ld b, h
+	ld c, l ; bc = true species index - 1, kept safe for the bank lookup below
 	ld d, h
 	ld e, l
 	add hl, hl
@@ -242,9 +244,22 @@ GetDexEntryPointer:
 	inc hl
 	ld d, [hl]
 	push de
-	rlca
-	rlca
-	maskbits NUM_DEX_ENTRY_BANKS
+	; bank = (true species index - 1) / 64; the low-byte-only bit trick this
+	; used to be (rlca/rlca/maskbits) silently broke once species indexes
+	; could exceed 8 bits - b (the high byte) is only ever nonzero for the
+	; species that spill into the last (highest) bank.
+	ld a, b
+	and a
+	jr z, .low_byte_ok
+	ld a, NUM_DEX_ENTRY_BANKS - 1
+	jr .got_bank
+.low_byte_ok
+	ld a, c
+	swap a
+	srl a
+	srl a
+	and %11
+.got_bank
 	ld hl, .PokedexEntryBanks
 	ld d, 0
 	ld e, a
@@ -259,6 +274,7 @@ GetDexEntryPointer:
 	db BANK("Pokedex Entries 065-128")
 	db BANK("Pokedex Entries 129-192")
 	db BANK("Pokedex Entries 193-251")
+	db BANK("Pokedex Entries 257-260")
 
 GetDexEntryPagePointer:
 	call GetDexEntryPointer

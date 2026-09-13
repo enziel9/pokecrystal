@@ -252,4 +252,13 @@ PokedexDataPointerTable:
 	dw LugiaPokedexEntry
 	dw HoOhPokedexEntry
 	dw CelebiPokedexEntry
+	dw TreeckoPokedexEntry
+	dw TorchicPokedexEntry
+	dw MudkipPokedexEntry
+	dw TurtwigPokedexEntry
+	dw ChimcharPokedexEntry
+	dw PiplupPokedexEntry
+	dw SnivyPokedexEntry
+	dw TepigPokedexEntry
+	dw OshawottPokedexEntry
 	assert_table_length NUM_POKEMON

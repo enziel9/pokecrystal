@@ -253,4 +253,16 @@ Pokered_MonIndices:
 	db QWILFISH
 	db WOBBUFFET
 	db WOBBUFFET
+	; Treecko..Oshawott have no Gen1 internal index (they don't exist in
+	; Gen1); padded with the same "no mapping" dummy used above so this
+	; table's length still matches NUM_POKEMON + 1.
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
+	db WOBBUFFET
 	assert_table_length NUM_POKEMON + 1

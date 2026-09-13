@@ -252,4 +252,13 @@ FirstEvoStages::
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw TREECKO
+	dw TORCHIC
+	dw MUDKIP
+	dw TURTWIG
+	dw CHIMCHAR
+	dw PIPLUP
+	dw SNIVY
+	dw TEPIG
+	dw OSHAWOTT
 	assert_table_length NUM_POKEMON

@@ -27,6 +27,7 @@ AlphabeticalPokedexOrder:
 	dw CHARMANDER
 	dw CHARMELEON
 	dw CHIKORITA
+	dw CHIMCHAR
 	dw CHINCHOU
 	dw CLEFABLE
 	dw CLEFAIRY
@@ -138,6 +139,7 @@ AlphabeticalPokedexOrder:
 	dw MISDREAVUS
 	dw MOLTRES
 	dw MR__MIME
+	dw MUDKIP
 	dw MUK
 	dw MURKROW
 	dw NATU
@@ -154,6 +156,7 @@ AlphabeticalPokedexOrder:
 	dw OMANYTE
 	dw OMASTAR
 	dw ONIX
+	dw OSHAWOTT
 	dw PARAS
 	dw PARASECT
 	dw PERSIAN
@@ -166,6 +169,7 @@ AlphabeticalPokedexOrder:
 	dw PILOSWINE
 	dw PINECO
 	dw PINSIR
+	dw PIPLUP
 	dw POLITOED
 	dw POLIWAG
 	dw POLIWHIRL
@@ -206,6 +210,7 @@ AlphabeticalPokedexOrder:
 	dw SMEARGLE
 	dw SMOOCHUM
 	dw SNEASEL
+	dw SNIVY
 	dw SNORLAX
 	dw SNUBBULL
 	dw SPEAROW
@@ -225,9 +230,13 @@ AlphabeticalPokedexOrder:
 	dw TEDDIURSA
 	dw TENTACOOL
 	dw TENTACRUEL
+	dw TEPIG
 	dw TOGEPI
 	dw TOGETIC
+	dw TORCHIC
 	dw TOTODILE
+	dw TREECKO
+	dw TURTWIG
 	dw TYPHLOSION
 	dw TYRANITAR
 	dw TYROGUE

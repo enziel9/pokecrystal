@@ -3355,3 +3355,126 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TreeckoEvosAttacks:
+	db 0 ; no evolutions yet - GROVYLE is not a species in this ROM
+	db 1, LEER
+	db 1, POUND
+	db 6, ABSORB
+	db 11, QUICK_ATTACK
+	db 16, PURSUIT
+	db 21, SCREECH
+	db 26, MEGA_DRAIN
+	db 31, AGILITY
+	db 36, SLAM
+	db 41, DETECT
+	db 46, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+TorchicEvosAttacks:
+	db 0 ; no evolutions yet - COMBUSKEN is not a species in this ROM
+	db 1, GROWL
+	db 1, SCRATCH
+	db 7, FOCUS_ENERGY
+	db 10, EMBER
+	db 16, PECK
+	db 19, SAND_ATTACK
+	db 25, FIRE_SPIN
+	db 28, QUICK_ATTACK
+	db 34, SLASH
+	db 37, MIRROR_MOVE
+	db 43, FLAMETHROWER
+	db 0 ; no more level-up moves
+
+MudkipEvosAttacks:
+	db 0 ; no evolutions yet - MARSHTOMP is not a species in this ROM
+	db 1, GROWL
+	db 1, TACKLE
+	db 6, MUD_SLAP
+	db 10, WATER_GUN
+	db 15, BIDE
+	db 19, FORESIGHT
+	db 28, TAKE_DOWN
+	db 33, WHIRLPOOL
+	db 37, PROTECT
+	db 42, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+TurtwigEvosAttacks:
+	db 0 ; no evolutions yet - GROTLE is not a species in this ROM
+	db 1, TACKLE
+	db 5, WITHDRAW
+	db 9, ABSORB
+	db 13, RAZOR_LEAF
+	db 17, CURSE
+	db 21, BITE
+	db 25, MEGA_DRAIN
+	db 29, LEECH_SEED
+	db 33, SYNTHESIS
+	db 37, CRUNCH
+	db 41, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+ChimcharEvosAttacks:
+	db 0 ; no evolutions yet - MONFERNO is not a species in this ROM
+	db 1, LEER
+	db 1, SCRATCH
+	db 7, EMBER
+	db 15, FURY_SWIPES
+	db 17, FLAME_WHEEL
+	db 33, FIRE_SPIN
+	db 41, FLAMETHROWER
+	db 0 ; no more level-up moves
+
+PiplupEvosAttacks:
+	db 0 ; no evolutions yet - PRINPLUP is not a species in this ROM
+	db 1, POUND
+	db 4, GROWL
+	db 8, BUBBLE
+	db 15, PECK
+	db 18, BIDE
+	db 22, BUBBLEBEAM
+	db 25, FURY_ATTACK
+	db 32, WHIRLPOOL
+	db 36, MIST
+	db 39, DRILL_PECK
+	db 43, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+SnivyEvosAttacks:
+	db 0 ; no evolutions yet - SERVINE is not a species in this ROM
+	db 1, TACKLE
+	db 4, LEER
+	db 7, VINE_WHIP
+	db 10, WRAP
+	db 13, GROWTH
+	db 19, LEECH_SEED
+	db 22, MEGA_DRAIN
+	db 25, SLAM
+	db 34, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+TepigEvosAttacks:
+	db 0 ; no evolutions yet - PIGNITE is not a species in this ROM
+	db 1, TACKLE
+	db 3, TAIL_WHIP
+	db 7, EMBER
+	db 13, DEFENSE_CURL
+	db 19, SMOG
+	db 21, ROLLOUT
+	db 25, TAKE_DOWN
+	db 33, FLAMETHROWER
+	db 39, ROAR
+	db 0 ; no more level-up moves
+
+OshawottEvosAttacks:
+	db 0 ; no evolutions yet - DEWOTT is not a species in this ROM
+	db 1, TACKLE
+	db 5, TAIL_WHIP
+	db 7, WATER_GUN
+	db 13, FOCUS_ENERGY
+	db 19, FURY_CUTTER
+	db 31, ENCORE
+	db 41, SWORDS_DANCE
+	db 43, HYDRO_PUMP
+	db 0 ; no more level-up moves

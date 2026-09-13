@@ -755,15 +755,31 @@ HeavyBall_GetDexEntryBank:
 ; BUG: Heavy Ball uses wrong weight value for three Pokémon (see docs/bugs_and_glitches.md)
 	push hl
 	push de
+	push bc
 	ld a, [wEnemyMonSpecies]
-	rlca
-	rlca
-	maskbits NUM_DEX_ENTRY_BANKS
+	call GetPokemonIndexFromID
+	dec hl
+	; bank = (true species index - 1) / 64; see the same fix in
+	; GetDexEntryPointer (engine/pokedex/pokedex_2.asm) for why this can't
+	; just bit-trick the raw handle byte anymore.
+	ld a, h
+	and a
+	jr z, .low_byte_ok
+	ld a, NUM_DEX_ENTRY_BANKS - 1
+	jr .got_bank
+.low_byte_ok
+	ld a, l
+	swap a
+	srl a
+	srl a
+	and %11
+.got_bank
 	ld hl, .PokedexEntryBanks
 	ld d, 0
 	ld e, a
 	add hl, de
 	ld a, [hl]
+	pop bc
 	pop de
 	pop hl
 	ret
@@ -773,6 +789,7 @@ HeavyBall_GetDexEntryBank:
 	db BANK("Pokedex Entries 065-128")
 	db BANK("Pokedex Entries 129-192")
 	db BANK("Pokedex Entries 193-251")
+	db BANK("Pokedex Entries 257-260")
 
 HeavyBallMultiplier:
 ; subtract 20 from catch rate if weight < 102.4 kg

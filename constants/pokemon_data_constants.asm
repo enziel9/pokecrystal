@@ -70,7 +70,7 @@ DEF NUM_GROWTH_RATES EQU const_value
 	const EGG_NONE          ; f (Undiscovered)
 
 ; pokedex entries (see data/pokemon/dex_entries.asm)
-DEF NUM_DEX_ENTRY_BANKS EQU 4
+DEF NUM_DEX_ENTRY_BANKS EQU 5
 
 ; party_struct members (see macros/ram.asm)
 rsreset

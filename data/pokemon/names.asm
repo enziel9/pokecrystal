@@ -255,4 +255,13 @@ PokemonNames::
 	dname "LUGIA"
 	dname "HO-OH"
 	dname "CELEBI"
+	dname "TREECKO"
+	dname "TORCHIC"
+	dname "MUDKIP"
+	dname "TURTWIG"
+	dname "CHIMCHAR"
+	dname "PIPLUP"
+	dname "SNIVY"
+	dname "TEPIG"
+	dname "OSHAWOTT"
 	assert_table_length NUM_POKEMON

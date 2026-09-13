@@ -251,4 +251,13 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+	dw TreeckoAnimation
+	dw TorchicAnimation
+	dw MudkipAnimation
+	dw TurtwigAnimation
+	dw ChimcharAnimation
+	dw PiplupAnimation
+	dw SnivyAnimation
+	dw TepigAnimation
+	dw OshawottAnimation
 	assert_table_length NUM_POKEMON

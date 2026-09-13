@@ -261,4 +261,13 @@ PokemonPicPointers::
 	dba_pics LugiaFrontpic, LugiaBackpic
 	dba_pics HoOhFrontpic, HoOhBackpic
 	dba_pics CelebiFrontpic, CelebiBackpic
+	dba_pics TreeckoFrontpic, TreeckoBackpic
+	dba_pics TorchicFrontpic, TorchicBackpic
+	dba_pics MudkipFrontpic, MudkipBackpic
+	dba_pics TurtwigFrontpic, TurtwigBackpic
+	dba_pics ChimcharFrontpic, ChimcharBackpic
+	dba_pics PiplupFrontpic, PiplupBackpic
+	dba_pics SnivyFrontpic, SnivyBackpic
+	dba_pics TepigFrontpic, TepigBackpic
+	dba_pics OshawottFrontpic, OshawottBackpic
 	assert_table_length NUM_POKEMON + 1

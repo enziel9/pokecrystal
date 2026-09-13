@@ -253,4 +253,13 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw TreeckoEvosAttacks
+	dw TorchicEvosAttacks
+	dw MudkipEvosAttacks
+	dw TurtwigEvosAttacks
+	dw ChimcharEvosAttacks
+	dw PiplupEvosAttacks
+	dw SnivyEvosAttacks
+	dw TepigEvosAttacks
+	dw OshawottEvosAttacks
 	assert_table_length NUM_POKEMON

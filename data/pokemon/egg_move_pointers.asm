@@ -251,4 +251,13 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw TreeckoEggMoves
+	dw TorchicEggMoves
+	dw MudkipEggMoves
+	dw TurtwigEggMoves
+	dw ChimcharEggMoves
+	dw PiplupEggMoves
+	dw SnivyEggMoves
+	dw TepigEggMoves
+	dw OshawottEggMoves
 	assert_table_length NUM_POKEMON
