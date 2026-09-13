@@ -553,5 +553,41 @@ INCBIN "gfx/pokemon/tepig/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/tepig/shiny.pal"
 INCBIN "gfx/pokemon/oshawott/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/oshawott/shiny.pal"
+INCBIN "gfx/pokemon/grovyle/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/grovyle/shiny.pal"
+INCBIN "gfx/pokemon/sceptile/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sceptile/shiny.pal"
+INCBIN "gfx/pokemon/combusken/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/combusken/shiny.pal"
+INCBIN "gfx/pokemon/blaziken/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/blaziken/shiny.pal"
+INCBIN "gfx/pokemon/marshtomp/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/marshtomp/shiny.pal"
+INCBIN "gfx/pokemon/swampert/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/swampert/shiny.pal"
+INCBIN "gfx/pokemon/grotle/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/grotle/shiny.pal"
+INCBIN "gfx/pokemon/torterra/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/torterra/shiny.pal"
+INCBIN "gfx/pokemon/monferno/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/monferno/shiny.pal"
+INCBIN "gfx/pokemon/infernape/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/infernape/shiny.pal"
+INCBIN "gfx/pokemon/prinplup/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/prinplup/shiny.pal"
+INCBIN "gfx/pokemon/empoleon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/empoleon/shiny.pal"
+INCBIN "gfx/pokemon/servine/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/servine/shiny.pal"
+INCBIN "gfx/pokemon/serperior/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/serperior/shiny.pal"
+INCBIN "gfx/pokemon/pignite/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/pignite/shiny.pal"
+INCBIN "gfx/pokemon/emboar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/emboar/shiny.pal"
+INCBIN "gfx/pokemon/dewott/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/dewott/shiny.pal"
+INCBIN "gfx/pokemon/samurott/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/samurott/shiny.pal"
 
 	assert_table_length NUM_POKEMON + 1

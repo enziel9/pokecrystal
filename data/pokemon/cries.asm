@@ -270,4 +270,24 @@ PokemonCries::
 	mon_cry CRY_CHIKORITA,   -16,  176 ; SNIVY
 	mon_cry CRY_CYNDAQUIL,   839,  128 ; TEPIG
 	mon_cry CRY_TOTODILE,   1132,  232 ; OSHAWOTT
+	; Second/third evolution stages reuse the matching Johto evolution
+	; stage's real cry base and tuning, same pattern as the base 9.
+	mon_cry CRY_CHIKORITA,   -34,  288 ; GROVYLE
+	mon_cry CRY_CHIKORITA,  -183,  512 ; SCEPTILE
+	mon_cry CRY_CYNDAQUIL,   801,  288 ; COMBUSKEN
+	mon_cry CRY_TYPHLOSION, 3840,  212 ; BLAZIKEN
+	mon_cry CRY_TOTODILE,   1088,  272 ; MARSHTOMP
+	mon_cry CRY_TOTODILE,   1020,  384 ; SWAMPERT
+	mon_cry CRY_CHIKORITA,   -34,  288 ; GROTLE
+	mon_cry CRY_CHIKORITA,  -183,  512 ; TORTERRA
+	mon_cry CRY_CYNDAQUIL,   801,  288 ; MONFERNO
+	mon_cry CRY_TYPHLOSION, 3840,  212 ; INFERNAPE
+	mon_cry CRY_TOTODILE,   1088,  272 ; PRINPLUP
+	mon_cry CRY_TOTODILE,   1020,  384 ; EMPOLEON
+	mon_cry CRY_CHIKORITA,   -34,  288 ; SERVINE
+	mon_cry CRY_CHIKORITA,  -183,  512 ; SERPERIOR
+	mon_cry CRY_CYNDAQUIL,   801,  288 ; PIGNITE
+	mon_cry CRY_TYPHLOSION, 3840,  212 ; EMBOAR
+	mon_cry CRY_TOTODILE,   1088,  272 ; DEWOTT
+	mon_cry CRY_TOTODILE,   1020,  384 ; SAMUROTT
 	assert_table_length NUM_POKEMON

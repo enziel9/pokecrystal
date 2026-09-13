@@ -260,4 +260,22 @@ EggMovePointers::
 	dw SnivyEggMoves
 	dw TepigEggMoves
 	dw OshawottEggMoves
+	dw NoEggMoves ; GROVYLE
+	dw NoEggMoves ; SCEPTILE
+	dw NoEggMoves ; COMBUSKEN
+	dw NoEggMoves ; BLAZIKEN
+	dw NoEggMoves ; MARSHTOMP
+	dw NoEggMoves ; SWAMPERT
+	dw NoEggMoves ; GROTLE
+	dw NoEggMoves ; TORTERRA
+	dw NoEggMoves ; MONFERNO
+	dw NoEggMoves ; INFERNAPE
+	dw NoEggMoves ; PRINPLUP
+	dw NoEggMoves ; EMPOLEON
+	dw NoEggMoves ; SERVINE
+	dw NoEggMoves ; SERPERIOR
+	dw NoEggMoves ; PIGNITE
+	dw NoEggMoves ; EMBOAR
+	dw NoEggMoves ; DEWOTT
+	dw NoEggMoves ; SAMUROTT
 	assert_table_length NUM_POKEMON

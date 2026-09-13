@@ -109,7 +109,7 @@ MACRO? dab ; dwb address, bank
 ENDM
 
 MACRO? dba_pic ; dbw bank, address
-	db BANK(\1) - PICS_FIX
+	db BANK(\1)
 	dw \1
 ENDM
 

@@ -17,6 +17,7 @@ AlphabeticalPokedexOrder:
 	dw BELLOSSOM
 	dw BELLSPROUT
 	dw BLASTOISE
+	dw BLAZIKEN
 	dw BLISSEY
 	dw BULBASAUR
 	dw BUTTERFREE
@@ -33,6 +34,7 @@ AlphabeticalPokedexOrder:
 	dw CLEFAIRY
 	dw CLEFFA
 	dw CLOYSTER
+	dw COMBUSKEN
 	dw CORSOLA
 	dw CROBAT
 	dw CROCONAW
@@ -40,6 +42,7 @@ AlphabeticalPokedexOrder:
 	dw CYNDAQUIL
 	dw DELIBIRD
 	dw DEWGONG
+	dw DEWOTT
 	dw DIGLETT
 	dw DITTO
 	dw DODRIO
@@ -56,6 +59,8 @@ AlphabeticalPokedexOrder:
 	dw ELECTABUZZ
 	dw ELECTRODE
 	dw ELEKID
+	dw EMBOAR
+	dw EMPOLEON
 	dw ENTEI
 	dw ESPEON
 	dw EXEGGCUTE
@@ -80,6 +85,8 @@ AlphabeticalPokedexOrder:
 	dw GRANBULL
 	dw GRAVELER
 	dw GRIMER
+	dw GROTLE
+	dw GROVYLE
 	dw GROWLITHE
 	dw GYARADOS
 	dw HAUNTER
@@ -95,6 +102,7 @@ AlphabeticalPokedexOrder:
 	dw HOUNDOUR
 	dw HYPNO
 	dw IGGLYBUFF
+	dw INFERNAPE
 	dw IVYSAUR
 	dw JIGGLYPUFF
 	dw JOLTEON
@@ -130,6 +138,7 @@ AlphabeticalPokedexOrder:
 	dw MAREEP
 	dw MARILL
 	dw MAROWAK
+	dw MARSHTOMP
 	dw MEGANIUM
 	dw MEOWTH
 	dw METAPOD
@@ -138,6 +147,7 @@ AlphabeticalPokedexOrder:
 	dw MILTANK
 	dw MISDREAVUS
 	dw MOLTRES
+	dw MONFERNO
 	dw MR__MIME
 	dw MUDKIP
 	dw MUK
@@ -165,6 +175,7 @@ AlphabeticalPokedexOrder:
 	dw PIDGEOT
 	dw PIDGEOTTO
 	dw PIDGEY
+	dw PIGNITE
 	dw PIKACHU
 	dw PILOSWINE
 	dw PINECO
@@ -178,6 +189,7 @@ AlphabeticalPokedexOrder:
 	dw PORYGON
 	dw PORYGON2
 	dw PRIMEAPE
+	dw PRINPLUP
 	dw PSYDUCK
 	dw PUPITAR
 	dw QUAGSIRE
@@ -191,14 +203,18 @@ AlphabeticalPokedexOrder:
 	dw REMORAID
 	dw RHYDON
 	dw RHYHORN
+	dw SAMUROTT
 	dw SANDSHREW
 	dw SANDSLASH
+	dw SCEPTILE
 	dw SCIZOR
 	dw SCYTHER
 	dw SEADRA
 	dw SEAKING
 	dw SEEL
 	dw SENTRET
+	dw SERPERIOR
+	dw SERVINE
 	dw SHELLDER
 	dw SHUCKLE
 	dw SKARMORY
@@ -224,6 +240,7 @@ AlphabeticalPokedexOrder:
 	dw SUICUNE
 	dw SUNFLORA
 	dw SUNKERN
+	dw SWAMPERT
 	dw SWINUB
 	dw TANGELA
 	dw TAUROS
@@ -234,6 +251,7 @@ AlphabeticalPokedexOrder:
 	dw TOGEPI
 	dw TOGETIC
 	dw TORCHIC
+	dw TORTERRA
 	dw TOTODILE
 	dw TREECKO
 	dw TURTWIG

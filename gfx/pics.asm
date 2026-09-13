@@ -775,8 +775,11 @@ INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+; Sections "Pics 20" to "Pics 24" are not used for any graphics themselves,
+; but their banks are used for other unrelated content and are shared here
+; for the Gen3-5 species below. Species pics are no longer restricted to a
+; specific contiguous bank range - see the removal of FixPicBank/PICS_FIX
+; in engine/gfx/load_pics.asm (docs/design_flaws.md's documented fix).
 
 ; Pics 20-24's host banks are each already close to full with pre-existing
 ; content unrelated to Pokemon pics, so the 9 Gen3-5 starters (~5KB total)
@@ -812,3 +815,45 @@ TepigFrontpic:       INCBIN "gfx/pokemon/tepig/front.animated.2bpp.lz"
 TepigBackpic:        INCBIN "gfx/pokemon/tepig/back.2bpp.lz"
 
 SECTION "Pics 24", ROMX
+
+; The Gen3-5 evolutions below no longer need to live in a Pics1-24 bank
+; specifically (see the FixPicBank/PICS_FIX removal in
+; engine/gfx/load_pics.asm) - "Pics 25" is a fresh MBC30 bank ($82).
+SECTION "Pics 25", ROMX
+
+GrovyleFrontpic:     INCBIN "gfx/pokemon/grovyle/front.animated.2bpp.lz"
+GrovyleBackpic:      INCBIN "gfx/pokemon/grovyle/back.2bpp.lz"
+SceptileFrontpic:    INCBIN "gfx/pokemon/sceptile/front.animated.2bpp.lz"
+SceptileBackpic:     INCBIN "gfx/pokemon/sceptile/back.2bpp.lz"
+CombuskenFrontpic:   INCBIN "gfx/pokemon/combusken/front.animated.2bpp.lz"
+CombuskenBackpic:    INCBIN "gfx/pokemon/combusken/back.2bpp.lz"
+BlazikenFrontpic:    INCBIN "gfx/pokemon/blaziken/front.animated.2bpp.lz"
+BlazikenBackpic:     INCBIN "gfx/pokemon/blaziken/back.2bpp.lz"
+MarshtompFrontpic:   INCBIN "gfx/pokemon/marshtomp/front.animated.2bpp.lz"
+MarshtompBackpic:    INCBIN "gfx/pokemon/marshtomp/back.2bpp.lz"
+SwampertFrontpic:    INCBIN "gfx/pokemon/swampert/front.animated.2bpp.lz"
+SwampertBackpic:     INCBIN "gfx/pokemon/swampert/back.2bpp.lz"
+GrotleFrontpic:      INCBIN "gfx/pokemon/grotle/front.animated.2bpp.lz"
+GrotleBackpic:       INCBIN "gfx/pokemon/grotle/back.2bpp.lz"
+TorterraFrontpic:    INCBIN "gfx/pokemon/torterra/front.animated.2bpp.lz"
+TorterraBackpic:     INCBIN "gfx/pokemon/torterra/back.2bpp.lz"
+MonfernoFrontpic:    INCBIN "gfx/pokemon/monferno/front.animated.2bpp.lz"
+MonfernoBackpic:     INCBIN "gfx/pokemon/monferno/back.2bpp.lz"
+InfernapeFrontpic:   INCBIN "gfx/pokemon/infernape/front.animated.2bpp.lz"
+InfernapeBackpic:    INCBIN "gfx/pokemon/infernape/back.2bpp.lz"
+PrinplupFrontpic:    INCBIN "gfx/pokemon/prinplup/front.animated.2bpp.lz"
+PrinplupBackpic:     INCBIN "gfx/pokemon/prinplup/back.2bpp.lz"
+EmpoleonFrontpic:    INCBIN "gfx/pokemon/empoleon/front.animated.2bpp.lz"
+EmpoleonBackpic:     INCBIN "gfx/pokemon/empoleon/back.2bpp.lz"
+ServineFrontpic:     INCBIN "gfx/pokemon/servine/front.animated.2bpp.lz"
+ServineBackpic:      INCBIN "gfx/pokemon/servine/back.2bpp.lz"
+SerperiorFrontpic:   INCBIN "gfx/pokemon/serperior/front.animated.2bpp.lz"
+SerperiorBackpic:    INCBIN "gfx/pokemon/serperior/back.2bpp.lz"
+PigniteFrontpic:     INCBIN "gfx/pokemon/pignite/front.animated.2bpp.lz"
+PigniteBackpic:      INCBIN "gfx/pokemon/pignite/back.2bpp.lz"
+EmboarFrontpic:      INCBIN "gfx/pokemon/emboar/front.animated.2bpp.lz"
+EmboarBackpic:       INCBIN "gfx/pokemon/emboar/back.2bpp.lz"
+DewottFrontpic:      INCBIN "gfx/pokemon/dewott/front.animated.2bpp.lz"
+DewottBackpic:       INCBIN "gfx/pokemon/dewott/back.2bpp.lz"
+SamurottFrontpic:    INCBIN "gfx/pokemon/samurott/front.animated.2bpp.lz"
+SamurottBackpic:     INCBIN "gfx/pokemon/samurott/back.2bpp.lz"

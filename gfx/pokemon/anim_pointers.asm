@@ -260,4 +260,22 @@ AnimationPointers:
 	dw SnivyAnimation
 	dw TepigAnimation
 	dw OshawottAnimation
+	dw GrovyleAnimation
+	dw SceptileAnimation
+	dw CombuskenAnimation
+	dw BlazikenAnimation
+	dw MarshtompAnimation
+	dw SwampertAnimation
+	dw GrotleAnimation
+	dw TorterraAnimation
+	dw MonfernoAnimation
+	dw InfernapeAnimation
+	dw PrinplupAnimation
+	dw EmpoleonAnimation
+	dw ServineAnimation
+	dw SerperiorAnimation
+	dw PigniteAnimation
+	dw EmboarAnimation
+	dw DewottAnimation
+	dw SamurottAnimation
 	assert_table_length NUM_POKEMON

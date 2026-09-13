@@ -280,6 +280,24 @@ DEF JOHTO_POKEMON EQU const_value
 	const SNIVY      ; 102
 	const TEPIG      ; 103
 	const OSHAWOTT   ; 104
+	const GROVYLE    ; 105
+	const SCEPTILE   ; 106
+	const COMBUSKEN  ; 107
+	const BLAZIKEN   ; 108
+	const MARSHTOMP  ; 109
+	const SWAMPERT   ; 10a
+	const GROTLE     ; 10b
+	const TORTERRA   ; 10c
+	const MONFERNO   ; 10d
+	const INFERNAPE  ; 10e
+	const PRINPLUP   ; 10f
+	const EMPOLEON   ; 110
+	const SERVINE    ; 111
+	const SERPERIOR  ; 112
+	const PIGNITE    ; 113
+	const EMBOAR     ; 114
+	const DEWOTT     ; 115
+	const SAMUROTT   ; 116
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3

@@ -260,4 +260,22 @@ BitmasksPointers:
 	dw SnivyBitmasks
 	dw TepigBitmasks
 	dw OshawottBitmasks
+	dw GrovyleBitmasks
+	dw SceptileBitmasks
+	dw CombuskenBitmasks
+	dw BlazikenBitmasks
+	dw MarshtompBitmasks
+	dw SwampertBitmasks
+	dw GrotleBitmasks
+	dw TorterraBitmasks
+	dw MonfernoBitmasks
+	dw InfernapeBitmasks
+	dw PrinplupBitmasks
+	dw EmpoleonBitmasks
+	dw ServineBitmasks
+	dw SerperiorBitmasks
+	dw PigniteBitmasks
+	dw EmboarBitmasks
+	dw DewottBitmasks
+	dw SamurottBitmasks
 	assert_table_length NUM_POKEMON

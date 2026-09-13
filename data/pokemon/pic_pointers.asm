@@ -270,4 +270,22 @@ PokemonPicPointers::
 	dba_pics SnivyFrontpic, SnivyBackpic
 	dba_pics TepigFrontpic, TepigBackpic
 	dba_pics OshawottFrontpic, OshawottBackpic
+	dba_pics GrovyleFrontpic, GrovyleBackpic
+	dba_pics SceptileFrontpic, SceptileBackpic
+	dba_pics CombuskenFrontpic, CombuskenBackpic
+	dba_pics BlazikenFrontpic, BlazikenBackpic
+	dba_pics MarshtompFrontpic, MarshtompBackpic
+	dba_pics SwampertFrontpic, SwampertBackpic
+	dba_pics GrotleFrontpic, GrotleBackpic
+	dba_pics TorterraFrontpic, TorterraBackpic
+	dba_pics MonfernoFrontpic, MonfernoBackpic
+	dba_pics InfernapeFrontpic, InfernapeBackpic
+	dba_pics PrinplupFrontpic, PrinplupBackpic
+	dba_pics EmpoleonFrontpic, EmpoleonBackpic
+	dba_pics ServineFrontpic, ServineBackpic
+	dba_pics SerperiorFrontpic, SerperiorBackpic
+	dba_pics PigniteFrontpic, PigniteBackpic
+	dba_pics EmboarFrontpic, EmboarBackpic
+	dba_pics DewottFrontpic, DewottBackpic
+	dba_pics SamurottFrontpic, SamurottBackpic
 	assert_table_length NUM_POKEMON + 1

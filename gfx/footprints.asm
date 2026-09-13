@@ -582,6 +582,24 @@ INCBIN "gfx/footprints/piplup.1bpp",     footprint_top
 INCBIN "gfx/footprints/snivy.1bpp",      footprint_top
 INCBIN "gfx/footprints/tepig.1bpp",      footprint_top
 INCBIN "gfx/footprints/oshawott.1bpp",   footprint_top
+INCBIN "gfx/footprints/grovyle.1bpp",    footprint_top
+INCBIN "gfx/footprints/sceptile.1bpp",   footprint_top
+INCBIN "gfx/footprints/combusken.1bpp",  footprint_top
+INCBIN "gfx/footprints/blaziken.1bpp",   footprint_top
+INCBIN "gfx/footprints/marshtomp.1bpp",  footprint_top
+INCBIN "gfx/footprints/swampert.1bpp",   footprint_top
+INCBIN "gfx/footprints/grotle.1bpp",     footprint_top
+INCBIN "gfx/footprints/torterra.1bpp",   footprint_top
+INCBIN "gfx/footprints/monferno.1bpp",   footprint_top
+INCBIN "gfx/footprints/infernape.1bpp",  footprint_top
+INCBIN "gfx/footprints/prinplup.1bpp",   footprint_top
+INCBIN "gfx/footprints/empoleon.1bpp",   footprint_top
+INCBIN "gfx/footprints/servine.1bpp",    footprint_top
+INCBIN "gfx/footprints/serperior.1bpp",  footprint_top
+INCBIN "gfx/footprints/pignite.1bpp",    footprint_top
+INCBIN "gfx/footprints/emboar.1bpp",     footprint_top
+INCBIN "gfx/footprints/dewott.1bpp",     footprint_top
+INCBIN "gfx/footprints/samurott.1bpp",   footprint_top
 ; 249-260 bottom halves
 INCBIN "gfx/footprints/lugia.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/ho_oh.1bpp",      footprint_bottom
@@ -595,5 +613,23 @@ INCBIN "gfx/footprints/piplup.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/snivy.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/tepig.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/oshawott.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/grovyle.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/sceptile.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/combusken.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/blaziken.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/marshtomp.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/swampert.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/grotle.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/torterra.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/monferno.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/infernape.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/prinplup.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/empoleon.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/servine.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/serperior.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/pignite.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/emboar.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/dewott.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/samurott.1bpp",   footprint_bottom
 
 	assert_table_length NUM_POKEMON

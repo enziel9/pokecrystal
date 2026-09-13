@@ -3357,7 +3357,8 @@ CelebiEvosAttacks:
 	db 0 ; no more level-up moves
 
 TreeckoEvosAttacks:
-	db 0 ; no evolutions yet - GROVYLE is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 16, GROVYLE
+	db 0 ; no more evolutions
 	db 1, LEER
 	db 1, POUND
 	db 6, ABSORB
@@ -3372,7 +3373,8 @@ TreeckoEvosAttacks:
 	db 0 ; no more level-up moves
 
 TorchicEvosAttacks:
-	db 0 ; no evolutions yet - COMBUSKEN is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 16, COMBUSKEN
+	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, SCRATCH
 	db 7, FOCUS_ENERGY
@@ -3387,7 +3389,8 @@ TorchicEvosAttacks:
 	db 0 ; no more level-up moves
 
 MudkipEvosAttacks:
-	db 0 ; no evolutions yet - MARSHTOMP is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 16, MARSHTOMP
+	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, TACKLE
 	db 6, MUD_SLAP
@@ -3401,7 +3404,8 @@ MudkipEvosAttacks:
 	db 0 ; no more level-up moves
 
 TurtwigEvosAttacks:
-	db 0 ; no evolutions yet - GROTLE is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 18, GROTLE
+	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 5, WITHDRAW
 	db 9, ABSORB
@@ -3416,7 +3420,8 @@ TurtwigEvosAttacks:
 	db 0 ; no more level-up moves
 
 ChimcharEvosAttacks:
-	db 0 ; no evolutions yet - MONFERNO is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 14, MONFERNO
+	db 0 ; no more evolutions
 	db 1, LEER
 	db 1, SCRATCH
 	db 7, EMBER
@@ -3427,7 +3432,8 @@ ChimcharEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiplupEvosAttacks:
-	db 0 ; no evolutions yet - PRINPLUP is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 16, PRINPLUP
+	db 0 ; no more evolutions
 	db 1, POUND
 	db 4, GROWL
 	db 8, BUBBLE
@@ -3442,7 +3448,8 @@ PiplupEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnivyEvosAttacks:
-	db 0 ; no evolutions yet - SERVINE is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 17, SERVINE
+	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, LEER
 	db 7, VINE_WHIP
@@ -3455,7 +3462,8 @@ SnivyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TepigEvosAttacks:
-	db 0 ; no evolutions yet - PIGNITE is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 17, PIGNITE
+	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 3, TAIL_WHIP
 	db 7, EMBER
@@ -3468,7 +3476,8 @@ TepigEvosAttacks:
 	db 0 ; no more level-up moves
 
 OshawottEvosAttacks:
-	db 0 ; no evolutions yet - DEWOTT is not a species in this ROM
+	dbbw EVOLVE_LEVEL, 17, DEWOTT
+	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 5, TAIL_WHIP
 	db 7, WATER_GUN
@@ -3477,4 +3486,246 @@ OshawottEvosAttacks:
 	db 31, ENCORE
 	db 41, SWORDS_DANCE
 	db 43, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+GrovyleEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, SCEPTILE
+	db 0 ; no more evolutions
+	db 1, POUND
+	db 1, LEER
+	db 1, ABSORB
+	db 1, QUICK_ATTACK
+	db 17, PURSUIT
+	db 23, SCREECH
+	db 35, AGILITY
+	db 41, SLAM
+	db 47, DETECT
+	db 0 ; no more level-up moves
+
+SceptileEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, POUND
+	db 1, LEER
+	db 1, ABSORB
+	db 1, QUICK_ATTACK
+	db 17, PURSUIT
+	db 23, SCREECH
+	db 35, AGILITY
+	db 43, SLAM
+	db 51, DETECT
+	db 59, FALSE_SWIPE
+	db 0 ; no more level-up moves
+
+CombuskenEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, BLAZIKEN
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, GROWL
+	db 1, EMBER
+	db 1, FOCUS_ENERGY
+	db 16, DOUBLE_KICK
+	db 17, PECK
+	db 21, SAND_ATTACK
+	db 32, QUICK_ATTACK
+	db 39, SLASH
+	db 0 ; no more level-up moves
+
+BlazikenEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, GROWL
+	db 1, EMBER
+	db 1, FOCUS_ENERGY
+	db 16, DOUBLE_KICK
+	db 17, PECK
+	db 21, SAND_ATTACK
+	db 32, QUICK_ATTACK
+	db 42, SLASH
+	db 49, MIRROR_MOVE
+	db 0 ; no more level-up moves
+
+MarshtompEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, SWAMPERT
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, WATER_GUN
+	db 1, MUD_SLAP
+	db 15, BIDE
+	db 20, FORESIGHT
+	db 31, TAKE_DOWN
+	db 42, PROTECT
+	db 0 ; no more level-up moves
+
+SwampertEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, WATER_GUN
+	db 1, MUD_SLAP
+	db 15, BIDE
+	db 20, FORESIGHT
+	db 31, TAKE_DOWN
+	db 46, PROTECT
+	db 52, EARTHQUAKE
+	db 0 ; no more level-up moves
+
+GrotleEvosAttacks:
+	dbbw EVOLVE_LEVEL, 32, TORTERRA
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, WITHDRAW
+	db 9, ABSORB
+	db 13, RAZOR_LEAF
+	db 17, CURSE
+	db 22, BITE
+	db 27, MEGA_DRAIN
+	db 32, LEECH_SEED
+	db 37, SYNTHESIS
+	db 0 ; no more level-up moves
+
+TorterraEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, ABSORB
+	db 1, RAZOR_LEAF
+	db 1, WITHDRAW
+	db 9, ABSORB
+	db 13, RAZOR_LEAF
+	db 17, CURSE
+	db 22, BITE
+	db 27, MEGA_DRAIN
+	db 33, LEECH_SEED
+	db 39, SYNTHESIS
+	db 45, CRUNCH
+	db 51, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+MonfernoEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, INFERNAPE
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, EMBER
+	db 14, MACH_PUNCH
+	db 16, FURY_SWIPES
+	db 19, FLAME_WHEEL
+	db 0 ; no more level-up moves
+
+InfernapeEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, EMBER
+	db 14, MACH_PUNCH
+	db 17, FURY_SWIPES
+	db 21, FLAME_WHEEL
+	db 45, FIRE_SPIN
+	db 0 ; no more level-up moves
+
+PrinplupEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, EMPOLEON
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 8, BUBBLE
+	db 15, PECK
+	db 16, METAL_CLAW
+	db 19, BIDE
+	db 22, BUBBLEBEAM
+	db 28, FURY_ATTACK
+	db 0 ; no more level-up moves
+
+EmpoleonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, BUBBLE
+	db 11, SWORDS_DANCE
+	db 15, PECK
+	db 16, METAL_CLAW
+	db 19, SWAGGER
+	db 24, BUBBLEBEAM
+	db 28, FURY_ATTACK
+	db 39, WHIRLPOOL
+	db 46, MIST
+	db 52, DRILL_PECK
+	db 0 ; no more level-up moves
+
+ServineEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, SERPERIOR
+	db 0 ; no more evolutions
+	db 1, VINE_WHIP
+	db 1, TACKLE
+	db 1, WRAP
+	db 1, LEER
+	db 10, WRAP
+	db 13, GROWTH
+	db 20, LEECH_SEED
+	db 24, MEGA_DRAIN
+	db 28, SLAM
+	db 0 ; no more level-up moves
+
+SerperiorEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, VINE_WHIP
+	db 1, TACKLE
+	db 1, WRAP
+	db 1, LEER
+	db 10, WRAP
+	db 13, GROWTH
+	db 20, LEECH_SEED
+	db 24, MEGA_DRAIN
+	db 28, SLAM
+	db 44, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+PigniteEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, EMBOAR
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 1, EMBER
+	db 13, DEFENSE_CURL
+	db 20, SMOG
+	db 23, ROLLOUT
+	db 28, TAKE_DOWN
+	db 0 ; no more level-up moves
+
+EmboarEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 1, EMBER
+	db 13, DEFENSE_CURL
+	db 20, SMOG
+	db 23, ROLLOUT
+	db 28, TAKE_DOWN
+	db 43, FLAMETHROWER
+	db 55, ROAR
+	db 0 ; no more level-up moves
+
+DewottEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, SAMUROTT
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 1, WATER_GUN
+	db 13, FOCUS_ENERGY
+	db 20, FURY_CUTTER
+	db 36, ENCORE
+	db 0 ; no more level-up moves
+
+SamurottEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 1, WATER_GUN
+	db 1, MEGAHORN
+	db 13, FOCUS_ENERGY
+	db 20, FURY_CUTTER
+	db 36, SLASH
+	db 38, ENCORE
+	db 57, SWORDS_DANCE
+	db 62, HYDRO_PUMP
 	db 0 ; no more level-up moves

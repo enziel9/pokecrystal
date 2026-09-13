@@ -243,6 +243,12 @@ INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
+
+; Moved out of "bank14" into its own section (see layout.link) once 278
+; species' worth of BaseData/PokemonNames no longer fit alongside the rest
+; of bank14's code.
+SECTION "Base Data and Names", ROMX
+
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"

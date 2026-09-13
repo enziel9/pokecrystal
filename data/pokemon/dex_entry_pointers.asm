@@ -261,4 +261,22 @@ PokedexDataPointerTable:
 	dw SnivyPokedexEntry
 	dw TepigPokedexEntry
 	dw OshawottPokedexEntry
+	dw GrovylePokedexEntry
+	dw SceptilePokedexEntry
+	dw CombuskenPokedexEntry
+	dw BlazikenPokedexEntry
+	dw MarshtompPokedexEntry
+	dw SwampertPokedexEntry
+	dw GrotlePokedexEntry
+	dw TorterraPokedexEntry
+	dw MonfernoPokedexEntry
+	dw InfernapePokedexEntry
+	dw PrinplupPokedexEntry
+	dw EmpoleonPokedexEntry
+	dw ServinePokedexEntry
+	dw SerperiorPokedexEntry
+	dw PignitePokedexEntry
+	dw EmboarPokedexEntry
+	dw DewottPokedexEntry
+	dw SamurottPokedexEntry
 	assert_table_length NUM_POKEMON
