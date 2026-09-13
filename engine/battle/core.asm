@@ -774,32 +774,32 @@ TryEnemyFlee:
 	jr nz, .Stay
 
 	ld a, [wTempEnemyMonSpecies]
-	ld de, 1
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld de, 2
 	ld hl, AlwaysFleeMons
-	call IsInArray
+	call IsInWordArray
 	jr c, .Flee
 
 	call BattleRandom
-	ld b, a
-	cp 50 percent + 1
+	add a, a
 	jr nc, .Stay
 
-	push bc
-	ld a, [wTempEnemyMonSpecies]
-	ld de, 1
+	push af
+	; de preserved from last call
 	ld hl, OftenFleeMons
-	call IsInArray
-	pop bc
+	call IsInWordArray
+	pop de
 	jr c, .Flee
 
-	ld a, b
-	cp 10 percent + 1
+	ld a, d
+	cp 20 percent ; double the value because of the previous add a, a
 	jr nc, .Stay
 
-	ld a, [wTempEnemyMonSpecies]
-	ld de, 1
+	ld de, 2
 	ld hl, SometimesFleeMons
-	call IsInArray
+	call IsInWordArray
 	jr c, .Flee
 
 .Stay:
@@ -3321,9 +3321,11 @@ IsThePlayerMonTypesEffectiveAgainstOTMon:
 	ld b, 0
 	add hl, bc
 	ld a, [hl]
-	dec a
-	ld hl, BaseData + BASE_TYPES
-	ld bc, BASE_DATA_SIZE
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, BaseData + BASE_TYPES - BASE_DATA_SIZE ;go one back so we don't decrement hl
+	ld a, BASE_DATA_SIZE
 	call AddNTimes
 	ld de, wEnemyMonType
 	ld bc, BASE_CATCH_RATE - BASE_TYPES
@@ -6428,6 +6430,11 @@ CheckSleepingTreeMon:
 	cp BATTLETYPE_TREE
 	jr nz, .NotSleeping
 
+	ld a, [wTempEnemyMonSpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+
 ; Get list for the time of day
 	ld hl, AsleepTreeMonsMorn
 	ld a, [wTimeOfDay]
@@ -6438,9 +6445,8 @@ CheckSleepingTreeMon:
 	ld hl, AsleepTreeMonsNite
 
 .Check:
-	ld a, [wTempEnemyMonSpecies]
-	ld de, 1 ; length of species id
-	call IsInArray
+	ld de, 2 ; length of species id
+	call IsInWordArray
 ; If it's a match, the opponent is asleep
 	ret c
 

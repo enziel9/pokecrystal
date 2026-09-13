@@ -1,8 +1,15 @@
 ; Pics are defined in gfx/pics.asm
 
+:
+	table_width 3 * 2, :-
+	dba_pics EggPic ; EGG is now -3, so it must go *above* the label
+	dba_pics ; unused
+	dba_pics ; unused
+	assert_table_length -EGG
 PokemonPicPointers::
-; entries correspond to Pokémon species
+; entries correspond to Pokémon species (first index is 0)
 	table_width 3 * 2
+	dba_pics ; unused
 	dba_pics BulbasaurFrontpic, BulbasaurBackpic
 	dba_pics IvysaurFrontpic, IvysaurBackpic
 	dba_pics VenusaurFrontpic, VenusaurBackpic
@@ -254,7 +261,4 @@ PokemonPicPointers::
 	dba_pics LugiaFrontpic, LugiaBackpic
 	dba_pics HoOhFrontpic, HoOhBackpic
 	dba_pics CelebiFrontpic, CelebiBackpic
-	assert_table_length NUM_POKEMON
-	dba_pics ; unused
-	dba_pics EggPic ; Egg has no back sprite
-	assert_table_length EGG
+	assert_table_length NUM_POKEMON + 1

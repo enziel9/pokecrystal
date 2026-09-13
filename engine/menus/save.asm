@@ -28,8 +28,10 @@ SaveAfterLinkTrade:
 	farcall StageRTCTimeForSave
 	farcall BackupMysteryGift
 	call SavePokemonData
+	call SaveIndexTables
 	call SaveChecksum
 	call SaveBackupPokemonData
+	call SaveBackupIndexTables
 	call SaveBackupChecksum
 	farcall BackupPartyMonMail
 	farcall SaveRTC
@@ -97,11 +99,13 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call SaveOptions
 	call SavePlayerData
 	call SavePokemonData
+	call SaveIndexTables
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
+	call SaveBackupIndexTables
 	call SaveBackupChecksum
 	farcall BackupPartyMonMail
 	farcall BackupGSBallFlag
@@ -272,12 +276,14 @@ _SaveGameData:
 	call SaveOptions
 	call SavePlayerData
 	call SavePokemonData
+	call SaveIndexTables
 	call SaveBox
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
+	call SaveBackupIndexTables
 	call SaveBackupChecksum
 	call UpdateStackTop
 	farcall BackupPartyMonMail
@@ -518,15 +524,32 @@ SavePokemonData:
 	call CloseSRAM
 	ret
 
+SaveIndexTables:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wPokemonIndexTable)
+	ldh [rSVBK], a
+	; saving is already a long operation, so take the chance to GC the table
+	farcall PokemonTableGarbageCollection
+	ld a, BANK(sPokemonIndexTable)
+	call OpenSRAM
+	ld hl, wPokemonIndexTable
+	ld de, sPokemonIndexTable
+	ld bc, wPokemonIndexTableEnd - wPokemonIndexTable
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
+	jp CloseSRAM
+
 SaveBox:
 	call GetBoxAddress
 	call SaveBoxAddress
 	ret
 
 SaveChecksum:
-	ld hl, sGameData
-	ld bc, sGameDataEnd - sGameData
-	ld a, BANK(sGameData)
+	ld hl, sSaveData
+	ld bc, sSaveDataEnd - sSaveData
+	ld a, BANK(sSaveData)
 	call OpenSRAM
 	call Checksum
 	ld a, e
@@ -580,10 +603,25 @@ SaveBackupPokemonData:
 	call CloseSRAM
 	ret
 
+SaveBackupIndexTables:
+	ld a, BANK(sBackupPokemonIndexTable)
+	call OpenSRAM
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wPokemonIndexTable)
+	ldh [rSVBK], a
+	ld hl, wPokemonIndexTable
+	ld de, sBackupPokemonIndexTable
+	ld bc, wPokemonIndexTableEnd - wPokemonIndexTable
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
+	jp CloseSRAM
+
 SaveBackupChecksum:
-	ld hl, sBackupGameData
-	ld bc, sBackupGameDataEnd - sBackupGameData
-	ld a, BANK(sBackupGameData)
+	ld hl, sBackupSaveData
+	ld bc, sBackupSaveDataEnd - sBackupSaveData
+	ld a, BANK(sBackupSaveData)
 	call OpenSRAM
 	call Checksum
 	ld a, e
@@ -598,6 +636,7 @@ TryLoadSaveFile:
 	jr nz, .backup
 	call LoadPlayerData
 	call LoadPokemonData
+	call LoadIndexTables
 	call LoadBox
 	farcall RestorePartyMonMail
 	farcall RestoreGSBallFlag
@@ -606,6 +645,7 @@ TryLoadSaveFile:
 	call SaveBackupOptions
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
+	call SaveBackupIndexTables
 	call SaveBackupChecksum
 	and a
 	ret
@@ -615,6 +655,7 @@ TryLoadSaveFile:
 	jr nz, .corrupt
 	call LoadBackupPlayerData
 	call LoadBackupPokemonData
+	call LoadBackupIndexTables
 	call LoadBox
 	farcall RestorePartyMonMail
 	farcall RestoreGSBallFlag
@@ -623,6 +664,7 @@ TryLoadSaveFile:
 	call SaveOptions
 	call SavePlayerData
 	call SavePokemonData
+	call SaveIndexTables
 	call SaveChecksum
 	and a
 	ret
@@ -763,15 +805,30 @@ LoadPokemonData:
 	call CloseSRAM
 	ret
 
+LoadIndexTables:
+	ld a, BANK(sPokemonIndexTable)
+	call OpenSRAM
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wPokemonIndexTable)
+	ldh [rSVBK], a
+	ld hl, sPokemonIndexTable
+	ld de, wPokemonIndexTable
+	ld bc, wPokemonIndexTableEnd - wPokemonIndexTable
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
+	jp CloseSRAM
+
 LoadBox:
 	call GetBoxAddress
 	call LoadBoxAddress
 	ret
 
 VerifyChecksum:
-	ld hl, sGameData
-	ld bc, sGameDataEnd - sGameData
-	ld a, BANK(sGameData)
+	ld hl, sSaveData
+	ld bc, sSaveDataEnd - sSaveData
+	ld a, BANK(sSaveData)
 	call OpenSRAM
 	call Checksum
 	ld a, [sChecksum + 0]
@@ -809,10 +866,25 @@ LoadBackupPokemonData:
 	call CloseSRAM
 	ret
 
+LoadBackupIndexTables:
+	ld a, BANK(sBackupPokemonIndexTable)
+	call OpenSRAM
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wPokemonIndexTable)
+	ldh [rSVBK], a
+	ld hl, sBackupPokemonIndexTable
+	ld de, wPokemonIndexTable
+	ld bc, wPokemonIndexTableEnd - wPokemonIndexTable
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
+	jp CloseSRAM
+
 VerifyBackupChecksum:
-	ld hl, sBackupGameData
-	ld bc, sBackupGameDataEnd - sBackupGameData
-	ld a, BANK(sBackupGameData)
+	ld hl, sBackupSaveData
+	ld bc, sBackupSaveDataEnd - sBackupSaveData
+	ld a, BANK(sBackupSaveData)
 	call OpenSRAM
 	call Checksum
 	ld a, [sBackupChecksum + 0]

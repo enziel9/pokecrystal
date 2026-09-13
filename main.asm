@@ -123,9 +123,7 @@ INCLUDE "engine/events/kurt_selectquantity_interpretjoypad.asm"
 
 SECTION "bankA", ROMX
 
-INCLUDE "engine/link/link.asm"
 INCLUDE "engine/overworld/wildmons.asm"
-INCLUDE "engine/battle/link_result.asm"
 
 
 SECTION "bankB", ROMX
@@ -315,7 +313,7 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
-
+INCLUDE "data/pokemon/first_stages.asm"
 
 SECTION "Phone Scripts 1", ROMX
 
@@ -534,6 +532,8 @@ SECTION "bank5B", ROMX
 
 INCLUDE "mobile/mobile_5b.asm"
 INCLUDE "engine/link/link_trade.asm"
+INCLUDE "engine/link/link.asm"
+INCLUDE "engine/battle/link_result.asm"
 
 
 SECTION "mobile5C", ROMX
