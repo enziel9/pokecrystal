@@ -15,6 +15,17 @@ GetPartyLocation::
 	ld bc, PARTYMON_STRUCT_LENGTH
 	jp AddNTimes
 
+FarSkipEvolutions::
+; Calls SkipEvolutions from another bank. It can't be a farcall because it uses hl.
+	ldh a, [hROMBank]
+	push af
+	ld a, BANK(SkipEvolutions)
+	rst Bankswitch
+	call SkipEvolutions
+	pop af
+	rst Bankswitch
+	ret
+
 GetDexNumber:: ; unreferenced
 ; Probably used in gen 1 to convert index number to dex number
 ; Not required in gen 2 because index number == dex number
