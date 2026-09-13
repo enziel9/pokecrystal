@@ -60,6 +60,8 @@ VillaggioIniziale_WoundedPokemon:
 	ifequal 3, .CategoryGround
 	ifequal 4, .CategorySpecial
 	ifequal 5, .CategoryRare
+	ifequal 6, .CategoryEsotici1
+	ifequal 7, .CategoryEsotici2
 	end ; player backed out (pressed B) - nothing lost, can talk again
 
 .CategoryGrass:
@@ -113,6 +115,27 @@ VillaggioIniziale_WoundedPokemon:
 	ifequal 1, .PickUnown
 	ifequal 2, .PickLapras
 	ifequal 3, .PickSnorlax
+	sjump .ChooseCategory
+
+.CategoryEsotici1:
+	loadmenu .Esotici1MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .PickTreecko
+	ifequal 2, .PickTorchic
+	ifequal 3, .PickMudkip
+	ifequal 4, .PickTurtwig
+	ifequal 5, .PickChimchar
+	sjump .ChooseCategory
+
+.CategoryEsotici2:
+	loadmenu .Esotici2MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .PickPiplup
+	ifequal 2, .PickSnivy
+	ifequal 3, .PickTepig
+	ifequal 4, .PickOshawott
 	sjump .ChooseCategory
 
 .PickBulbasaur:
@@ -207,6 +230,42 @@ VillaggioIniziale_WoundedPokemon:
 	givepoke SNORLAX, 5
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_SNORLAX
 	sjump .GotStarter
+.PickTreecko:
+	givepoke TREECKO, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TREECKO
+	sjump .GotStarter
+.PickTorchic:
+	givepoke TORCHIC, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TORCHIC
+	sjump .GotStarter
+.PickMudkip:
+	givepoke MUDKIP, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_MUDKIP
+	sjump .GotStarter
+.PickTurtwig:
+	givepoke TURTWIG, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TURTWIG
+	sjump .GotStarter
+.PickChimchar:
+	givepoke CHIMCHAR, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_CHIMCHAR
+	sjump .GotStarter
+.PickPiplup:
+	givepoke PIPLUP, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_PIPLUP
+	sjump .GotStarter
+.PickSnivy:
+	givepoke SNIVY, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_SNIVY
+	sjump .GotStarter
+.PickTepig:
+	givepoke TEPIG, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TEPIG
+	sjump .GotStarter
+.PickOshawott:
+	givepoke OSHAWOTT, 5
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_OSHAWOTT
+	sjump .GotStarter
 
 .GotStarter:
 	follow PLAYER, VILLAGGIO_WOUNDED_POKEMON
@@ -226,12 +285,14 @@ VillaggioIniziale_WoundedPokemon:
 
 .CategoryMenuData:
 	db STATICMENU_CURSOR ; flags
-	db 5 ; items
+	db 7 ; items
 	db "ERBA E PICCOLI@"
 	db "ACQUA@"
 	db "TERRA E ROCCIA@"
 	db "SPECIALI@"
 	db "RARI@"
+	db "ESOTICI 1@"
+	db "ESOTICI 2@"
 
 .GrassMenuHeader:
 	db MENU_BACKUP_TILES
@@ -305,6 +366,35 @@ VillaggioIniziale_WoundedPokemon:
 	db "UNOWN@"
 	db "LAPRAS@"
 	db "SNORLAX@"
+
+.Esotici1MenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 0, 4, 15, TEXTBOX_Y - 1
+	dw .Esotici1MenuData
+	db 1
+
+.Esotici1MenuData:
+	db STATICMENU_CURSOR
+	db 5
+	db "TREECKO@"
+	db "TORCHIC@"
+	db "MUDKIP@"
+	db "TURTWIG@"
+	db "CHIMCHAR@"
+
+.Esotici2MenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 0, 4, 15, TEXTBOX_Y - 1
+	dw .Esotici2MenuData
+	db 1
+
+.Esotici2MenuData:
+	db STATICMENU_CURSOR
+	db 4
+	db "PIPLUP@"
+	db "SNIVY@"
+	db "TEPIG@"
+	db "OSHAWOTT@"
 
 VillaggioIniziale_GrandpaApproachMovement:
 	step DOWN
