@@ -2108,3 +2108,137 @@ Cry_Rattata_Ch8:
 	noise_note 1, 10, 2, 57
 	noise_note 8, 9, 1, 73
 	sound_ret
+
+; Ported verbatim from monhacks/ancientruby's audio/cries.asm using this
+; engine's legacy audio macro aliases (macros/legacy.asm), which are
+; confirmed byte-for-byte equivalent to ancientruby's own musicheader/
+; sound/noise/tone/dutycycle/loopchannel/soundinput macros - both reduce
+; to the exact same underlying dn/db/dw packing. Real dedicated cry
+; samples for Treecko/Torchic/Mudkip/Blaziken (not present anywhere in
+; the base engine), reused as-is by their evolutions in
+; data/pokemon/cries.asm. "__", "C_", "C#" are ancientruby's named note
+; pitches (0, 1, 2 respectively, see its constants/audio_constants.asm)
+; and aren't defined in this engine, so used here as plain numbers.
+
+Cry_Treecko:
+	musicheader 3, 5, Cry_Treecko_Ch5
+	musicheader 1, 6, Cry_Treecko_Ch6
+	musicheader 1, 8, Cry_Treecko_Ch8
+
+Cry_Treecko_Ch5:
+	tone $0020
+Cry_Treecko_Ch6:
+	sound_duty 1, 0, 2, 0
+	sound 0,  3, $c8, $0641
+	sound 0,  3, $48, $0641
+	sound 0,  7, $f8, $0790
+	sound 0,  5, $f8, $078e
+	sound 0,  5, $f1, $078b
+	endchannel
+
+Cry_Treecko_Ch8:
+	noise 0,  5, $91, $10
+	noise 0,  9, $94, $3
+	endchannel
+
+Cry_Torchic:
+	musicheader 3, 5, Cry_Torchic_Ch5
+	musicheader 1, 6, Cry_Torchic_Ch6
+	musicheader 1, 8, Cry_Torchic_Ch8
+
+Cry_Torchic_Ch5:
+	tone $0020
+Cry_Torchic_Ch6:
+	dutycycle $2
+	sound 0,  9, $2f, $0107
+.loop1
+	sound 0,  1, $e1, $0483
+	sound 0,  1, $51, $044e
+	loopchannel 4, .loop1
+.loop2
+	sound 0,  1, $e1, $03da
+	sound 0,  2, $51, $0312
+	loopchannel 4, .loop2
+	endchannel
+
+; Shared verbatim with Gligar's real cry in ancientruby.
+Cry_Torchic_Ch8:
+	noise 0,  9, $3f, $52
+	noise 2,  1, $93, $4f
+	endchannel
+
+Cry_Mudkip:
+	musicheader 3, 5, Cry_Mudkip_Ch5
+	musicheader 1, 6, Cry_Mudkip_Ch6
+	musicheader 1, 8, Cry_Mudkip_Ch8
+
+Cry_Mudkip_Ch5:
+	sound_duty 2, 0, 3, 0
+	sound 0,  9, $f8, $0330
+	sound 0,  9, $f8, $0340
+	sound 0,  9, $c8, $07b2
+	sound 0,  9, $b8, $07b3
+	sound 2,  1, $b2, $07b4
+	endchannel
+
+Cry_Mudkip_Ch6:
+	sound_duty 2, 0, 1, 0
+	sound 0,  9, $e8, $0320
+	sound 0,  9, $e8, $0328
+	sound 0,  9, $98, $0780
+	sound 0,  9, $88, $0782
+	sound 2,  1, $72, $0784
+	endchannel
+
+Cry_Mudkip_Ch8:
+	noise 0,  3, $be, $49
+	noise 0,  6, $be, $3a
+	noise 0,  3, $be, $29
+	noise 2,  9, $d3, $6e
+	endchannel
+
+Cry_Blaziken:
+	musicheader 3, 5, Cry_Blaziken_Ch5
+	musicheader 1, 6, Cry_Blaziken_Ch6
+	musicheader 1, 8, Cry_Blaziken_Ch8
+
+; Shared verbatim with Teddiursa's real cry in ancientruby.
+Cry_Blaziken_Ch5:
+	sound_duty 2, 0, 1, 0
+.loop1
+	sound 0,  4, $c1, $0791
+	loopchannel 3, .loop1
+.loop2
+	sound 0,  4, $d1, $04b1
+	loopchannel 6, .loop2
+.loop3
+	sound 0,  2, $d1, $0491
+	sound 0,  2, $b1, $0451
+	loopchannel 6, .loop3
+.loop4
+	sound 0,  2, $a3, $0471
+	sound 0,  2, $81, $0441
+	loopchannel 6, .loop4
+.loop5
+	sound 0,  2, $41, $0421
+	sound 0,  2, $21, $0401
+	loopchannel 4, .loop5
+	endchannel
+
+Cry_Blaziken_Ch6:
+	sound_duty 0, 2, 3, 1
+	sound 0,  9, $99, $0740
+	sound 0,  9, $79, $0746
+	sound 1,  1, $f6, $078d
+	sound 0,  9, $f8, $0791
+	sound 0,  9, $f8, $078d
+	sound 0,  9, $f8, $0787
+	sound 1,  9, $e2, $0783
+	endchannel
+
+Cry_Blaziken_Ch8:
+	noise 1,  1, $a6, $16
+	noise 1,  9, $98, $3d
+	noise 2,  1, $98, $5c
+	noise 2,  1, $75, $5f
+	endchannel

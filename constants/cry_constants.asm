@@ -72,5 +72,9 @@
 	const CRY_AIPOM
 	const CRY_DUNSPARCE
 	const CRY_DONPHAN
+	const CRY_TREECKO
+	const CRY_TORCHIC
+	const CRY_MUDKIP
+	const CRY_BLAZIKEN
 
 DEF NUM_CRIES EQU const_value

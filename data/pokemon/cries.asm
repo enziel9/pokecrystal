@@ -262,37 +262,32 @@ PokemonCries::
 	; exact order (TREECKO..OSHAWOTT, then GROVYLE..SAMUROTT), not grouped
 	; by region, even though the comments below are grouped for reading.
 	;
-	; ancientruby (the Hoenn source repo) actually ships brand new dedicated
-	; cry samples (CRY_TREECKO/CRY_TORCHIC/CRY_MUDKIP/CRY_BLAZIKEN), built
-	; from real new audio channel data (audio/cries.asm there) rather than
-	; retuning an existing sample. Not ported: its channel-data opcodes
-	; (sound/tone/noise/musicheader) don't map 1:1 onto this engine's
-	; renamed equivalents (square_note/pitch_offset/noise_note/
-	; channel_count) closely enough to hand-translate safely without being
-	; able to actually hear the result. Falls back to reusing the matching
-	; Johto starter's real cry base and tuning instead, same pattern as
-	; shared cries within a native evolution line.
+	; ancientruby (the Hoenn source repo) ships brand new dedicated cry
+	; samples for this trio - ported for real into audio/cries.asm
+	; (Cry_Treecko/Cry_Torchic/Cry_Mudkip/Cry_Blaziken) using this
+	; engine's legacy audio macro aliases, confirmed byte-for-byte
+	; equivalent to ancientruby's own macros.
 	;
 	; Sinnoh (dp.gbc) and Unova (BW3G) trios below: real community
 	; pitch/length tuning, verified in each repo's own
 	; data/pokemon/cries.asm - these retune an EXISTING native cry sample
 	; this engine already has, so unlike the Hoenn trio they port over
 	; directly with no new audio content needed.
-	mon_cry CRY_CHIKORITA,   -16,  176 ; TREECKO
-	mon_cry CRY_CYNDAQUIL,   839,  128 ; TORCHIC
-	mon_cry CRY_TOTODILE,   1132,  232 ; MUDKIP
+	mon_cry CRY_TREECKO,     -16,  176 ; TREECKO
+	mon_cry CRY_TORCHIC,     839,  128 ; TORCHIC
+	mon_cry CRY_MUDKIP,     1132,  232 ; MUDKIP
 	mon_cry CRY_BULBASAUR,    128,  129 ; TURTWIG
 	mon_cry CRY_CHARMANDER,    96,  192 ; CHIMCHAR
 	mon_cry CRY_SQUIRTLE,      96,  192 ; PIPLUP
 	mon_cry CRY_VENONAT,     $096, $0cd ; SNIVY
 	mon_cry CRY_NIDORAN_M,  -$08d, $0ab ; TEPIG
 	mon_cry CRY_SLOWPOKE,    $1ca, $130 ; OSHAWOTT
-	mon_cry CRY_CHIKORITA,   -34,  288 ; GROVYLE
-	mon_cry CRY_CHIKORITA,  -183,  512 ; SCEPTILE
-	mon_cry CRY_CYNDAQUIL,   801,  288 ; COMBUSKEN
-	mon_cry CRY_TYPHLOSION, 3840,  212 ; BLAZIKEN
-	mon_cry CRY_TOTODILE,   1088,  272 ; MARSHTOMP
-	mon_cry CRY_TOTODILE,   1020,  384 ; SWAMPERT
+	mon_cry CRY_TREECKO,     -34,  288 ; GROVYLE
+	mon_cry CRY_TREECKO,    -183,  512 ; SCEPTILE
+	mon_cry CRY_TORCHIC,     801,  288 ; COMBUSKEN
+	mon_cry CRY_BLAZIKEN,   3840,  212 ; BLAZIKEN
+	mon_cry CRY_MUDKIP,     1088,  272 ; MARSHTOMP
+	mon_cry CRY_MUDKIP,     1020,  384 ; SWAMPERT
 	mon_cry CRY_BULBASAUR,     32,  256 ; GROTLE
 	mon_cry CRY_BULBASAUR,      0,  320 ; TORTERRA
 	mon_cry CRY_CHARMANDER,    32,  192 ; MONFERNO
