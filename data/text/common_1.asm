@@ -157,19 +157,19 @@ _OakTimeWokeUpText::
 	text "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"
 
-	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
+	para "Il nonno alza lo"
+	line "sguardo un attimo."
 
-	para "Will you check the"
-	line "clock for me?"
+	para "Mi dai una mano"
+	line "con l'orologio?"
 	prompt
 
 _OakTimeWhatTimeIsItText::
-	text "What time is it?"
+	text "Che ore sono?"
 	done
 
 _OakTimeWhatHoursText::
-	text "What?@"
+	text "Cosa?@"
 	text_end
 
 _OakTimeHoursQuestionMarkText::
@@ -177,11 +177,11 @@ _OakTimeHoursQuestionMarkText::
 	done
 
 _OakTimeHowManyMinutesText::
-	text "How many minutes?"
+	text "Quanti minuti?"
 	done
 
 _OakTimeWhoaMinutesText::
-	text "Whoa!@"
+	text "Ah!@"
 	text_end
 
 _OakTimeMinutesQuestionMarkText::
@@ -190,27 +190,27 @@ _OakTimeMinutesQuestionMarkText::
 
 _OakTimeOversleptText::
 	text "!"
-	line "I overslept!"
+	line "Che tardi che e'!"
 	done
 
 _OakTimeYikesText::
 	text "!"
-	line "Yikes! I over-"
-	cont "slept!"
+	line "Diamine, e' gia'"
+	cont "giorno!"
 	done
 
 _OakTimeSoDarkText::
 	text "!"
-	line "No wonder it's so"
-	cont "dark!"
+	line "Ecco perche' e'"
+	cont "buio!"
 	done
 
 _OakTimeWhatDayIsItText::
-	text "What day is it?"
+	text "Che giorno e'?"
 	done
 
 _OakTimeIsItText::
-	text ", is it?"
+	text ", vero?"
 	done
 
 ; Mobile Adapter
@@ -1875,4 +1875,54 @@ _HoldStillText::
 _PrestoAllDoneText::
 	text "Presto! All done."
 	line "Come again, OK?"
+	done
+
+_NonnoMemoryText::
+	text "Vieni qui."
+	line "Lascia che ti"
+	cont "racconti qualcosa"
+	cont "del mondo."
+
+	para "Tu sei nato in"
+	line "un'epoca diversa"
+	cont "dalla mia."
+
+	para "Oggi il mondo e'"
+	line "diviso in due:"
+
+	para "la Terra di Sopra"
+	line "e la Terra di"
+	cont "Sotto."
+
+	para "Sopra ci sono le"
+	line "citta', l'Ordine,"
+	cont "la ricchezza."
+
+	para "Sotto, c'e' chi"
+	line "lavora, lotta e"
+	cont "sopravvive."
+
+	para "Ma la natura non"
+	line "si arrende mai"
+	cont "davvero."
+
+	para "Puo' essere"
+	line "ferita, respinta,"
+	cont "sembrare sconfitta."
+
+	para "Ma prima o poi,"
+	line "ritorna sempre."
+
+	para "Ricordalo bene:"
+	line "il potere puo'"
+	cont "governare gli"
+	cont "uomini,"
+
+	para "ma nessuno puo'"
+	line "governare la"
+	cont "natura per sempre."
+
+	para "E un giorno, la"
+	line "natura presentera'"
+	cont "il conto."
 	done

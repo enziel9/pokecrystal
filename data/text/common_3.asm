@@ -1,36 +1,36 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "A proposito..."
+	line "Come ti chiami?"
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+	text "<PLAYER>, ci sei?"
+	line "Bene, allora."
 
-	para "Your very own"
-	line "#MON story is"
-	cont "about to unfold."
+	para "La sella e' quasi"
+	line "finita, e le tue"
+	cont "mani sono sporche."
 
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	para "Il lavoro nei"
+	line "campi non aspetta"
+	cont "nessuno."
 
-	para "A world of dreams"
-	line "and adventures"
+	para "Ma ricorda:"
+	line "ogni giorno conta."
 
-	para "with #MON"
-	line "awaits! Let's go!"
+	para "Domani sara'"
+	line "un altro giorno."
 
-	para "I'll be seeing you"
-	line "later!"
+	para "Su, andiamo a"
+	line "prendere la legna."
 	done
 
 _ClockTimeMayBeWrongText::
-	text "The clock's time"
-	line "may be wrong."
+	text "L'orologio di casa"
+	line "e' sballato."
 
-	para "Please reset the"
-	line "time."
+	para "Sistema pure"
+	line "l'ora giusta."
 	prompt
 
 _ClockSetWithControlPadText::

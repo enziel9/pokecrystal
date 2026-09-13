@@ -79,11 +79,11 @@ VillaggioIniziale_WoundedPokemon:
 	loadmenu .WaterMenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .PickSquirtle
-	ifequal 2, .PickPoliwag
-	ifequal 3, .PickMagikarp
-	ifequal 4, .PickShellder
-	ifequal 5, .PickTentacool
+	ifequal 1, .PickGengar
+	ifequal 2, .PickPikachu
+	ifequal 3, .PickClefairy
+	ifequal 4, .PickJynx
+	ifequal 5, .PickJigglypuff
 	sjump .ChooseCategory
 
 .CategoryGround:
@@ -113,7 +113,7 @@ VillaggioIniziale_WoundedPokemon:
 	verticalmenu
 	closewindow
 	ifequal 1, .PickUnown
-	ifequal 2, .PickLapras
+	ifequal 2, .PickRhydon
 	ifequal 3, .PickSnorlax
 	sjump .ChooseCategory
 
@@ -139,139 +139,147 @@ VillaggioIniziale_WoundedPokemon:
 	sjump .ChooseCategory
 
 .PickBulbasaur:
-	givepoke BULBASAUR, 5
+	givepoke BULBASAUR, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_BULBASAUR
 	sjump .GotStarter
 .PickOddish:
-	givepoke ODDISH, 5
+	givepoke ODDISH, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_ODDISH
 	sjump .GotStarter
 .PickParas:
-	givepoke PARAS, 5
+	givepoke PARAS, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_PARAS
 	sjump .GotStarter
 .PickDiglett:
-	givepoke DIGLETT, 5
+	givepoke DIGLETT, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_DIGLETT
 	sjump .GotStarter
 .PickWeedle:
-	givepoke WEEDLE, 5
+	givepoke WEEDLE, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_WEEDLE
 	sjump .GotStarter
-.PickSquirtle:
-	givepoke SQUIRTLE, 5
-	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_SQUIRTLE
+.PickGengar:
+	givepoke GENGAR, 2
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_GENGAR
 	sjump .GotStarter
-.PickPoliwag:
-	givepoke POLIWAG, 5
-	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_POLIWAG
+.PickPikachu:
+	givepoke PIKACHU, 2
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_PIKACHU
 	sjump .GotStarter
-.PickMagikarp:
-	givepoke MAGIKARP, 5
-	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_MAGIKARP
+.PickClefairy:
+	givepoke CLEFAIRY, 2
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_CLEFAIRY
 	sjump .GotStarter
-.PickShellder:
-	givepoke SHELLDER, 5
-	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_SHELLDER
+.PickJynx:
+	givepoke JYNX, 2
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_JYNX
 	sjump .GotStarter
-.PickTentacool:
-	givepoke TENTACOOL, 5
-	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TENTACOOL
+.PickJigglypuff:
+	givepoke JIGGLYPUFF, 2
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_JIGGLYPUFF
 	sjump .GotStarter
 .PickGeodude:
-	givepoke GEODUDE, 5
+	givepoke GEODUDE, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_GEODUDE
 	sjump .GotStarter
 .PickGrowlithe:
-	givepoke GROWLITHE, 5
+	givepoke GROWLITHE, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_GROWLITHE
 	sjump .GotStarter
 .PickMachop:
-	givepoke MACHOP, 5
+	givepoke MACHOP, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_MACHOP
 	sjump .GotStarter
 .PickVoltorb:
-	givepoke VOLTORB, 5
+	givepoke VOLTORB, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_VOLTORB
 	sjump .GotStarter
 .PickEkans:
-	givepoke EKANS, 5
+	givepoke EKANS, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_EKANS
 	sjump .GotStarter
 .PickCharmander:
-	givepoke CHARMANDER, 5
+	givepoke CHARMANDER, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_CHARMANDER
 	sjump .GotStarter
 .PickTogepi:
-	givepoke TOGEPI, 5
+	givepoke TOGEPI, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TOGEPI
 	sjump .GotStarter
 .PickGrimer:
-	givepoke GRIMER, 5
+	givepoke GRIMER, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_GRIMER
 	sjump .GotStarter
 .PickZubat:
-	givepoke ZUBAT, 5
+	givepoke ZUBAT, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_ZUBAT
 	sjump .GotStarter
 .PickTauros:
-	givepoke TAUROS, 5
+	givepoke TAUROS, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TAUROS
 	sjump .GotStarter
 .PickUnown:
-	givepoke UNOWN, 5
+	givepoke UNOWN, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_UNOWN
 	sjump .GotStarter
-.PickLapras:
-	givepoke LAPRAS, 5
-	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_LAPRAS
+.PickRhydon:
+	givepoke RHYDON, 2
+	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_RHYDON
 	sjump .GotStarter
 .PickSnorlax:
-	givepoke SNORLAX, 5
+	givepoke SNORLAX, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_SNORLAX
 	sjump .GotStarter
 .PickTreecko:
-	givepoke TREECKO, 5
+	givepoke TREECKO, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TREECKO
 	sjump .GotStarter
 .PickTorchic:
-	givepoke TORCHIC, 5
+	givepoke TORCHIC, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TORCHIC
 	sjump .GotStarter
 .PickMudkip:
-	givepoke MUDKIP, 5
+	givepoke MUDKIP, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_MUDKIP
 	sjump .GotStarter
 .PickTurtwig:
-	givepoke TURTWIG, 5
+	givepoke TURTWIG, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TURTWIG
 	sjump .GotStarter
 .PickChimchar:
-	givepoke CHIMCHAR, 5
+	givepoke CHIMCHAR, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_CHIMCHAR
 	sjump .GotStarter
 .PickPiplup:
-	givepoke PIPLUP, 5
+	givepoke PIPLUP, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_PIPLUP
 	sjump .GotStarter
 .PickSnivy:
-	givepoke SNIVY, 5
+	givepoke SNIVY, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_SNIVY
 	sjump .GotStarter
 .PickTepig:
-	givepoke TEPIG, 5
+	givepoke TEPIG, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_TEPIG
 	sjump .GotStarter
 .PickOshawott:
-	givepoke OSHAWOTT, 5
+	givepoke OSHAWOTT, 2
 	variablesprite SPRITE_VILLAGGIO_STARTER, SPRITE_OSHAWOTT
 	sjump .GotStarter
 
 .GotStarter:
+	opentext
+	writetext VillaggioIniziale_BerryHealText
+	waitbutton
+	closetext
 	follow PLAYER, VILLAGGIO_WOUNDED_POKEMON
 	applymovement VILLAGGIO_GRANDPA, VillaggioIniziale_GrandpaApproachMovement
 	opentext
 	writetext VillaggioIniziale_GrandpaApproachText
+	waitbutton
+	closetext
+	opentext
+	writetext VillaggioIniziale_NightText
 	waitbutton
 	closetext
 	setevent EVENT_VILLAGGIO_INIZIALE_GOT_STARTER
@@ -287,7 +295,7 @@ VillaggioIniziale_WoundedPokemon:
 	db STATICMENU_CURSOR ; flags
 	db 7 ; items
 	db "ERBA E PICCOLI@"
-	db "ACQUA@"
+	db "SELVATICI@"
 	db "TERRA E ROCCIA@"
 	db "SPECIALI@"
 	db "RARI@"
@@ -318,11 +326,11 @@ VillaggioIniziale_WoundedPokemon:
 .WaterMenuData:
 	db STATICMENU_CURSOR
 	db 5
-	db "SQUIRTLE@"
-	db "POLIWAG@"
-	db "MAGIKARP@"
-	db "SHELLDER@"
-	db "TENTACOOL@"
+	db "GENGAR@"
+	db "PIKACHU@"
+	db "CLEFAIRY@"
+	db "JYNX@"
+	db "JIGGLYPUFF@"
 
 .GroundMenuHeader:
 	db MENU_BACKUP_TILES
@@ -364,7 +372,7 @@ VillaggioIniziale_WoundedPokemon:
 	db STATICMENU_CURSOR
 	db 3
 	db "UNOWN@"
-	db "LAPRAS@"
+	db "RHYDON@"
 	db "SNORLAX@"
 
 .Esotici1MenuHeader:
@@ -484,13 +492,35 @@ VillaggioIniziale_WoundedPokemonText:
 	cont "dietro la legna..."
 	done
 
+VillaggioIniziale_BerryHealText:
+	text "Trovi delle bacche"
+	line "vicino agli alberi."
+
+	para "Gliele porgi, e il"
+	line "Pokemon si rialza"
+	cont "energico."
+	done
+
 VillaggioIniziale_GrandpaApproachText:
-	text "NONNO: Finalmente"
-	line "hai trovato il tuo"
-	cont "compagno."
-	para "Ora andiamo, e'"
-	line "ora di tornare a"
-	cont "casa insieme."
+	text "NONNO: Un Pokemon?"
+	line "Dove?"
+
+	para "Ho capito. Per"
+	line "questa notte puo'"
+	cont "restare."
+
+	para "Ma domani dovrai"
+	line "darti da fare il"
+	cont "doppio."
+	done
+
+VillaggioIniziale_NightText:
+	text "Il sole tramonta"
+	line "sul villaggio."
+
+	para "Il tuo nuovo"
+	line "compagno dorme"
+	cont "al riparo."
 	done
 
 VillaggioIniziale_YoungsterText:
