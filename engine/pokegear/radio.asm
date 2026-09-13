@@ -648,8 +648,12 @@ PokedexShow1:
 	call StartRadioStation
 .loop
 	call Random
-	cp NUM_POKEMON
-	jr nc, .loop
+	; Random only returns 0-255, so once NUM_POKEMON exceeds 256 every
+	; result is already in range; species 256+ just can't be picked here.
+	if NUM_POKEMON < 256
+		cp NUM_POKEMON
+		jr nc, .loop
+	endc
 	ld c, a
 	push bc
 	ld a, c
@@ -1524,8 +1528,16 @@ GetBuenasPassword:
 	assert_table_length NUM_BUENA_FUNCTIONS
 
 .Mon:
-	call .GetTheIndex
+	ld h, 0
+	ld l, c
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetPokemonIDFromIndex
 	call GetPokemonName
+	ld [wNamedObjectIndex], a
 	ret
 
 .Item:

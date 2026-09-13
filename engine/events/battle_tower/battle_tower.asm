@@ -385,15 +385,16 @@ ValidateBTParty: ; unreferenced
 	ld b, h
 	ld c, l
 	ld a, [hl]
-	and a
-for x, $ff, NUM_POKEMON, -1
+	cp EGG
 	jr z, .invalid
-	cp x
-endr
-	jr nz, .valid
+	call IsAPokemon
+	jr nc, .valid
 
 .invalid
-	ld a, SMEARGLE
+	push hl
+	ld hl, SMEARGLE
+	call GetPokemonIDFromIndex
+	pop hl
 	ld [hl], a
 
 .valid
@@ -520,8 +521,10 @@ Function17042c:
 	; If a == 0 and b >= $fc, overwrite the current trainer's data with
 	; Unknown_17047e, and exit the inner loop.
 	ld a, b
-	cp NUM_POKEMON + 1
-	jr nc, .copy_data
+	if NUM_POKEMON + 1 < 256
+		cp NUM_POKEMON + 1
+		jr nc, .copy_data
+	endc
 
 .next_iteration
 	dec c

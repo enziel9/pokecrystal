@@ -123,8 +123,10 @@ Pokedex_InitCursorPosition:
 	ld a, [wPrevDexEntry]
 	and a
 	jr z, .done
-	cp NUM_POKEMON + 1
-	jr nc, .done
+	if NUM_POKEMON + 1 < 256
+		cp NUM_POKEMON + 1
+		jr nc, .done
+	endc
 
 	ld b, a
 	ld a, [wDexListingEnd]
@@ -1694,6 +1696,12 @@ Pokedex_ABCMode:
 	ld a, [wDexListingEnd]
 	ld c, 0
 .loop2abc
+	; NOTE: this loop, Pokedex_ABCMode's `ld c, NUM_POKEMON` above, and the
+	; equivalent block below all assume NUM_POKEMON fits in 8 bits, same as
+	; AlphabeticalPokedexOrder/NewPokedexOrder's real length. Raising
+	; NUM_POKEMON past 255 needs this loop's exit condition reworked AND
+	; those two tables extended with real entries for the added species -
+	; not safe to paper over here.
 	cp NUM_POKEMON
 	jr z, .doneabc
 	ld [hl], c
