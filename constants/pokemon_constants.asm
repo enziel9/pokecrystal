@@ -271,6 +271,15 @@ DEF JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const TREECKO    ; fc
+	const TORCHIC    ; fd
+	const MUDKIP     ; fe
+	const TURTWIG    ; ff
+	const CHIMCHAR   ; 100
+	const PIPLUP     ; 101
+	const SNIVY      ; 102
+	const TEPIG      ; 103
+	const OSHAWOTT   ; 104
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3
