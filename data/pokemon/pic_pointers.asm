@@ -1,8 +1,15 @@
 ; Pics are defined in gfx/pics.asm
 
+:
+	table_width 3 * 2, :-
+	dba_pics EggPic ; EGG is now -3, so it must go *above* the label
+	dba_pics ; unused
+	dba_pics ; unused
+	assert_table_length -EGG
 PokemonPicPointers::
-; entries correspond to Pokémon species
+; entries correspond to Pokémon species (first index is 0)
 	table_width 3 * 2
+	dba_pics ; unused
 	dba_pics BulbasaurFrontpic, BulbasaurBackpic
 	dba_pics IvysaurFrontpic, IvysaurBackpic
 	dba_pics VenusaurFrontpic, VenusaurBackpic
@@ -254,7 +261,31 @@ PokemonPicPointers::
 	dba_pics LugiaFrontpic, LugiaBackpic
 	dba_pics HoOhFrontpic, HoOhBackpic
 	dba_pics CelebiFrontpic, CelebiBackpic
-	assert_table_length NUM_POKEMON
-	dba_pics ; unused
-	dba_pics EggPic ; Egg has no back sprite
-	assert_table_length EGG
+	dba_pics TreeckoFrontpic, TreeckoBackpic
+	dba_pics TorchicFrontpic, TorchicBackpic
+	dba_pics MudkipFrontpic, MudkipBackpic
+	dba_pics TurtwigFrontpic, TurtwigBackpic
+	dba_pics ChimcharFrontpic, ChimcharBackpic
+	dba_pics PiplupFrontpic, PiplupBackpic
+	dba_pics SnivyFrontpic, SnivyBackpic
+	dba_pics TepigFrontpic, TepigBackpic
+	dba_pics OshawottFrontpic, OshawottBackpic
+	dba_pics GrovyleFrontpic, GrovyleBackpic
+	dba_pics SceptileFrontpic, SceptileBackpic
+	dba_pics CombuskenFrontpic, CombuskenBackpic
+	dba_pics BlazikenFrontpic, BlazikenBackpic
+	dba_pics MarshtompFrontpic, MarshtompBackpic
+	dba_pics SwampertFrontpic, SwampertBackpic
+	dba_pics GrotleFrontpic, GrotleBackpic
+	dba_pics TorterraFrontpic, TorterraBackpic
+	dba_pics MonfernoFrontpic, MonfernoBackpic
+	dba_pics InfernapeFrontpic, InfernapeBackpic
+	dba_pics PrinplupFrontpic, PrinplupBackpic
+	dba_pics EmpoleonFrontpic, EmpoleonBackpic
+	dba_pics ServineFrontpic, ServineBackpic
+	dba_pics SerperiorFrontpic, SerperiorBackpic
+	dba_pics PigniteFrontpic, PigniteBackpic
+	dba_pics EmboarFrontpic, EmboarBackpic
+	dba_pics DewottFrontpic, DewottBackpic
+	dba_pics SamurottFrontpic, SamurottBackpic
+	assert_table_length NUM_POKEMON + 1

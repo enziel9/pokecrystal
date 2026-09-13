@@ -251,4 +251,31 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
+	dw TreeckoAnimationIdle
+	dw TorchicAnimationIdle
+	dw MudkipAnimationIdle
+	dw TurtwigAnimationIdle
+	dw ChimcharAnimationIdle
+	dw PiplupAnimationIdle
+	dw SnivyAnimationIdle
+	dw TepigAnimationIdle
+	dw OshawottAnimationIdle
+	dw GrovyleAnimationIdle
+	dw SceptileAnimationIdle
+	dw CombuskenAnimationIdle
+	dw BlazikenAnimationIdle
+	dw MarshtompAnimationIdle
+	dw SwampertAnimationIdle
+	dw GrotleAnimationIdle
+	dw TorterraAnimationIdle
+	dw MonfernoAnimationIdle
+	dw InfernapeAnimationIdle
+	dw PrinplupAnimationIdle
+	dw EmpoleonAnimationIdle
+	dw ServineAnimationIdle
+	dw SerperiorAnimationIdle
+	dw PigniteAnimationIdle
+	dw EmboarAnimationIdle
+	dw DewottAnimationIdle
+	dw SamurottAnimationIdle
 	assert_table_length NUM_POKEMON

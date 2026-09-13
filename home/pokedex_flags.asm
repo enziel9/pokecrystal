@@ -22,6 +22,33 @@ CountSetBits::
 	ld [wNumSetBits], a
 	ret
 
+CountSetBits16::
+; Count the number of set bits in bc bytes starting from hl.
+; Returns in bc; hl points to the end of the buffer; clobbers af, de.
+	ld de, 0
+.next
+	ld a, b
+	or c
+	jr z, .done
+	push bc
+	ld a, [hli]
+	ld c, a
+	ld b, 8
+.count
+	srl c
+	jr nc, .skip
+	inc de
+.skip
+	dec b
+	jr nz, .count
+	pop bc
+	dec bc
+	jr .next
+.done
+	ld b, d
+	ld c, e
+	ret
+
 GetWeekday::
 	ld a, [wCurDay]
 .mod
@@ -31,35 +58,40 @@ GetWeekday::
 	ret
 
 SetSeenAndCaughtMon::
-	push af
-	ld c, a
+	call GetPokemonFlagIndex
+	push de
+	call SetSeenMonIndex
+	pop de
+SetCaughtMonIndex::
 	ld hl, wPokedexCaught
-	ld b, SET_FLAG
-	call PokedexFlagAction
-	pop af
-	; fallthrough
+	jr SetPokedexStatusMonIndex
 
 SetSeenMon::
-	ld c, a
+	call GetPokemonFlagIndex
+SetSeenMonIndex::
 	ld hl, wPokedexSeen
+SetPokedexStatusMonIndex:
 	ld b, SET_FLAG
-	jr PokedexFlagAction
+	jr FlagActionBaseOne
 
 CheckCaughtMon::
-	ld c, a
+	call GetPokemonFlagIndex
+CheckCaughtMonIndex::
 	ld hl, wPokedexCaught
-	ld b, CHECK_FLAG
-	jr PokedexFlagAction
+	jr CheckPokedexStatusMonIndex
 
 CheckSeenMon::
-	ld c, a
+	call GetPokemonFlagIndex
+CheckSeenMonIndex::
 	ld hl, wPokedexSeen
+CheckPokedexStatusMonIndex:
 	ld b, CHECK_FLAG
-	; fallthrough
+FlagActionBaseOne:
+	dec de
+	jp FlagAction
 
-PokedexFlagAction::
-	ld d, 0
-	predef SmallFarFlagAction
-	ld a, c
-	and a
+GetPokemonFlagIndex:
+	call GetPokemonIndexFromID
+	ld d, h
+	ld e, l
 	ret

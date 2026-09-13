@@ -271,9 +271,44 @@ DEF JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const TREECKO    ; fc
+	const TORCHIC    ; fd
+	const MUDKIP     ; fe
+	const TURTWIG    ; ff
+	const CHIMCHAR   ; 100
+	const PIPLUP     ; 101
+	const SNIVY      ; 102
+	const TEPIG      ; 103
+	const OSHAWOTT   ; 104
+	const GROVYLE    ; 105
+	const SCEPTILE   ; 106
+	const COMBUSKEN  ; 107
+	const BLAZIKEN   ; 108
+	const MARSHTOMP  ; 109
+	const SWAMPERT   ; 10a
+	const GROTLE     ; 10b
+	const TORTERRA   ; 10c
+	const MONFERNO   ; 10d
+	const INFERNAPE  ; 10e
+	const PRINPLUP   ; 10f
+	const EMPOLEON   ; 110
+	const SERVINE    ; 111
+	const SERPERIOR  ; 112
+	const PIGNITE    ; 113
+	const EMBOAR     ; 114
+	const DEWOTT     ; 115
+	const SAMUROTT   ; 116
 DEF NUM_POKEMON EQU const_value - 1
-	const_skip       ; fc
-	const EGG        ; fd
+
+DEF EGG EQU -3
+
+; limits:
+; 999: everything that prints dex counts
+; 1407: size of wPokedexOrder
+; 4095: hard limit; would require serious redesign to increase
+if NUM_POKEMON > 999
+	fail "Too many Pokémon defined!"
+endc
 
 ; Unown forms
 ; indexes for:

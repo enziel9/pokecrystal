@@ -251,4 +251,31 @@ FramesPointers:
 	dw LugiaFrames
 	dw HoOhFrames
 	dw CelebiFrames
+	dw TreeckoFrames
+	dw TorchicFrames
+	dw MudkipFrames
+	dw TurtwigFrames
+	dw ChimcharFrames
+	dw PiplupFrames
+	dw SnivyFrames
+	dw TepigFrames
+	dw OshawottFrames
+	dw GrovyleFrames
+	dw SceptileFrames
+	dw CombuskenFrames
+	dw BlazikenFrames
+	dw MarshtompFrames
+	dw SwampertFrames
+	dw GrotleFrames
+	dw TorterraFrames
+	dw MonfernoFrames
+	dw InfernapeFrames
+	dw PrinplupFrames
+	dw EmpoleonFrames
+	dw ServineFrames
+	dw SerperiorFrames
+	dw PigniteFrames
+	dw EmboarFrames
+	dw DewottFrames
+	dw SamurottFrames
 	assert_table_length NUM_POKEMON

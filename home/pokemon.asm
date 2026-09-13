@@ -4,7 +4,7 @@ IsAPokemon::
 	jr z, .NotAPokemon
 	cp EGG
 	jr z, .Pokemon
-	cp NUM_POKEMON + 1
+	cp MON_TABLE_ENTRIES + 1
 	jr c, .Pokemon
 
 .NotAPokemon:
@@ -155,8 +155,6 @@ _PlayMonCry::
 	ret
 
 LoadCry::
-; Load cry bc.
-
 	call GetCryIndex
 	ret c
 
@@ -192,12 +190,15 @@ endr
 GetCryIndex::
 	and a
 	jr z, .no
-	cp NUM_POKEMON + 1
+	cp MON_TABLE_ENTRIES + 1
 	jr nc, .no
 
-	dec a
-	ld c, a
-	ld b, 0
+	push hl
+	call GetPokemonIndexFromID
+	dec hl
+	ld b, h
+	ld c, l
+	pop hl
 	and a
 	ret
 
@@ -234,14 +235,6 @@ Print8BitNumLeftAlign::
 	ld b, PRINTNUM_LEFTALIGN | 1
 	jp PrintNum
 
-GetNthMove:: ; unreferenced
-	ld hl, wListMoves_MoveIndicesBuffer
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ret
-
 GetBaseData::
 	push bc
 	push de
@@ -257,9 +250,11 @@ GetBaseData::
 	jr z, .egg
 
 ; Get BaseData
-	dec a
-	ld bc, BASE_DATA_SIZE
-	ld hl, BaseData
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld a, BASE_DATA_SIZE
+	ld hl, BaseData - BASE_DATA_SIZE ;go one back so we don't decrement hl
 	call AddNTimes
 	ld de, wCurBaseData
 	ld bc, BASE_DATA_SIZE
@@ -289,7 +284,7 @@ GetBaseData::
 .end
 ; Replace Pokedex # with species
 	ld a, [wCurSpecies]
-	ld [wBaseDexNo], a
+	ld [wBaseSpecies], a
 
 	pop af
 	rst Bankswitch

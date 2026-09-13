@@ -63,4 +63,9 @@ INCBIN "gfx/frames/map_entry_sign.2bpp"
 FontsExtra2_UpArrowGFX:
 INCBIN "gfx/font/up_arrow.2bpp"
 
+; Moved out of "bank3E" into its own section (see layout.link) once 278
+; species' worth of footprint data no longer fit alongside the rest of
+; bank3E's code.
+SECTION "Footprints", ROMX
+
 INCLUDE "gfx/footprints.asm"

@@ -805,5 +805,96 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+TreeckoEggMoves:
+	db ABSORB
+	db CRUNCH
+	db DOUBLE_KICK
+	db DRAGONBREATH
+	db LEECH_SEED
+	db RAZOR_WIND
+	db SLASH
+	db SYNTHESIS
+	db -1 ; end
+
+TorchicEggMoves:
+	db AGILITY
+	db BATON_PASS
+	db COUNTER
+	db CURSE
+	db ENDURE
+	db LOW_KICK
+	db PECK
+	db REVERSAL
+	db ROCK_SLIDE
+	db SWAGGER
+	db -1 ; end
+
+MudkipEggMoves:
+	db ANCIENTPOWER
+	db BARRIER
+	db BITE
+	db COUNTER
+	db CURSE
+	db DOUBLE_EDGE
+	db MIRROR_COAT
+	db MUD_SLAP
+	db SLUDGE
+	db STOMP
+	db WHIRLPOOL
+	db -1 ; end
+
+TurtwigEggMoves:
+	db AMNESIA
+	db BODY_SLAM
+	db DOUBLE_EDGE
+	db GROWTH
+	db THRASH
+	db -1 ; end
+
+ChimcharEggMoves:
+	db COUNTER
+	db DOUBLE_KICK
+	db ENCORE
+	db FIRE_PUNCH
+	db FOCUS_ENERGY
+	db SUBMISSION
+	db THUNDERPUNCH
+	db -1 ; end
+
+PiplupEggMoves:
+	db AGILITY
+	db BIDE
+	db FLAIL
+	db HYDRO_PUMP
+	db ICY_WIND
+	db MUD_SLAP
+	db SNORE
+	db SUPERSONIC
+	db -1 ; end
+
+SnivyEggMoves:
+	db GLARE
+	db IRON_TAIL
+	db MEAN_LOOK
+	db MIRROR_COAT
+	db PURSUIT
+	db SWEET_SCENT
+	db SYNTHESIS
+	db TWISTER
+	db -1 ; end
+
+TepigEggMoves:
+	db BODY_SLAM
+	db CURSE
+	db MAGNITUDE
+	db SLEEP_TALK
+	db THRASH
+	db -1 ; end
+
+OshawottEggMoves:
+	db DETECT
+	db SCREECH
+	db -1 ; end
+
 NoEggMoves:
 	db -1 ; end

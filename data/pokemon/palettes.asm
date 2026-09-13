@@ -1,3 +1,21 @@
+; Eggs are negative now
+INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/egg/shiny.pal"
+
+; -2
+	RGB 30, 26, 11
+	RGB 23, 16, 00
+; -2 shiny
+	RGB 30, 26, 11
+	RGB 23, 16, 00
+
+; -1
+	RGB 23, 23, 23
+	RGB 17, 17, 17
+; -1 shiny
+	RGB 23, 23, 23
+	RGB 17, 17, 17
+
 PokemonPalettes:
 ; entries correspond to Pokémon species, two apiece
 
@@ -517,33 +535,59 @@ INCBIN "gfx/pokemon/ho_oh/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ho_oh/shiny.pal"
 INCBIN "gfx/pokemon/celebi/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/celebi/shiny.pal"
+INCBIN "gfx/pokemon/treecko/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/treecko/shiny.pal"
+INCBIN "gfx/pokemon/torchic/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/torchic/shiny.pal"
+INCBIN "gfx/pokemon/mudkip/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/mudkip/shiny.pal"
+INCBIN "gfx/pokemon/turtwig/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/turtwig/shiny.pal"
+INCBIN "gfx/pokemon/chimchar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/chimchar/shiny.pal"
+INCBIN "gfx/pokemon/piplup/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/piplup/shiny.pal"
+INCBIN "gfx/pokemon/snivy/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/snivy/shiny.pal"
+INCBIN "gfx/pokemon/tepig/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/tepig/shiny.pal"
+INCBIN "gfx/pokemon/oshawott/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/oshawott/shiny.pal"
+INCBIN "gfx/pokemon/grovyle/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/grovyle/shiny.pal"
+INCBIN "gfx/pokemon/sceptile/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sceptile/shiny.pal"
+INCBIN "gfx/pokemon/combusken/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/combusken/shiny.pal"
+INCBIN "gfx/pokemon/blaziken/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/blaziken/shiny.pal"
+INCBIN "gfx/pokemon/marshtomp/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/marshtomp/shiny.pal"
+INCBIN "gfx/pokemon/swampert/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/swampert/shiny.pal"
+INCBIN "gfx/pokemon/grotle/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/grotle/shiny.pal"
+INCBIN "gfx/pokemon/torterra/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/torterra/shiny.pal"
+INCBIN "gfx/pokemon/monferno/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/monferno/shiny.pal"
+INCBIN "gfx/pokemon/infernape/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/infernape/shiny.pal"
+INCBIN "gfx/pokemon/prinplup/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/prinplup/shiny.pal"
+INCBIN "gfx/pokemon/empoleon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/empoleon/shiny.pal"
+INCBIN "gfx/pokemon/servine/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/servine/shiny.pal"
+INCBIN "gfx/pokemon/serperior/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/serperior/shiny.pal"
+INCBIN "gfx/pokemon/pignite/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/pignite/shiny.pal"
+INCBIN "gfx/pokemon/emboar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/emboar/shiny.pal"
+INCBIN "gfx/pokemon/dewott/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/dewott/shiny.pal"
+INCBIN "gfx/pokemon/samurott/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/samurott/shiny.pal"
 
 	assert_table_length NUM_POKEMON + 1
-
-; 252
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-; 252 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-
-INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors ; not normal.gbcpal
-INCLUDE "gfx/pokemon/egg/shiny.pal"
-
-	assert_table_length EGG + 1
-
-; 254
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-; 254 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-
-; 255
-	RGB 23, 23, 23
-	RGB 17, 17, 17
-; 255 shiny
-	RGB 23, 23, 23
-	RGB 17, 17, 17
-
-	assert_table_length $100

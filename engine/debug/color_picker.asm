@@ -83,7 +83,13 @@ DebugColor_InitMonOrTrainerColor:
 
 DebugColor_InitMonColor:
 	ld de, wDebugOriginalColors
-	ld c, NUM_POKEMON + 1
+	; debug tool only: caps at 256 species (c=0 wraps to a 256-iteration
+	; loop) once NUM_POKEMON no longer fits an 8-bit counter + 1
+	if NUM_POKEMON + 1 < 256
+		ld c, NUM_POKEMON + 1
+	else
+		ld c, 0
+	endc
 .loop
 	push bc
 	push hl
@@ -281,7 +287,12 @@ DebugColorMain:
 	and a
 	jr nz, .trainer
 ; mon
-	ld a, NUM_POKEMON ; CELEBI
+	; debug tool only: caps at species 255 once NUM_POKEMON no longer fits
+	if NUM_POKEMON < 256
+		ld a, NUM_POKEMON
+	else
+		ld a, 255
+	endc
 	ret
 .trainer
 	ld a, NUM_TRAINER_CLASSES ; MYSTICALMAN

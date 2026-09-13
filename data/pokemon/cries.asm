@@ -257,9 +257,52 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
+	; This table is positional (indexed by species constant, see
+	; constants/pokemon_constants.asm) - entries below MUST stay in that
+	; exact order (TREECKO..OSHAWOTT, then GROVYLE..SAMUROTT), not grouped
+	; by region, even though the comments below are grouped for reading.
+	;
+	; ancientruby (the Hoenn source repo) actually ships brand new dedicated
+	; cry samples (CRY_TREECKO/CRY_TORCHIC/CRY_MUDKIP/CRY_BLAZIKEN), built
+	; from real new audio channel data (audio/cries.asm there) rather than
+	; retuning an existing sample. Not ported: its channel-data opcodes
+	; (sound/tone/noise/musicheader) don't map 1:1 onto this engine's
+	; renamed equivalents (square_note/pitch_offset/noise_note/
+	; channel_count) closely enough to hand-translate safely without being
+	; able to actually hear the result. Falls back to reusing the matching
+	; Johto starter's real cry base and tuning instead, same pattern as
+	; shared cries within a native evolution line.
+	;
+	; Sinnoh (dp.gbc) and Unova (BW3G) trios below: real community
+	; pitch/length tuning, verified in each repo's own
+	; data/pokemon/cries.asm - these retune an EXISTING native cry sample
+	; this engine already has, so unlike the Hoenn trio they port over
+	; directly with no new audio content needed.
+	mon_cry CRY_CHIKORITA,   -16,  176 ; TREECKO
+	mon_cry CRY_CYNDAQUIL,   839,  128 ; TORCHIC
+	mon_cry CRY_TOTODILE,   1132,  232 ; MUDKIP
+	mon_cry CRY_BULBASAUR,    128,  129 ; TURTWIG
+	mon_cry CRY_CHARMANDER,    96,  192 ; CHIMCHAR
+	mon_cry CRY_SQUIRTLE,      96,  192 ; PIPLUP
+	mon_cry CRY_VENONAT,     $096, $0cd ; SNIVY
+	mon_cry CRY_NIDORAN_M,  -$08d, $0ab ; TEPIG
+	mon_cry CRY_SLOWPOKE,    $1ca, $130 ; OSHAWOTT
+	mon_cry CRY_CHIKORITA,   -34,  288 ; GROVYLE
+	mon_cry CRY_CHIKORITA,  -183,  512 ; SCEPTILE
+	mon_cry CRY_CYNDAQUIL,   801,  288 ; COMBUSKEN
+	mon_cry CRY_TYPHLOSION, 3840,  212 ; BLAZIKEN
+	mon_cry CRY_TOTODILE,   1088,  272 ; MARSHTOMP
+	mon_cry CRY_TOTODILE,   1020,  384 ; SWAMPERT
+	mon_cry CRY_BULBASAUR,     32,  256 ; GROTLE
+	mon_cry CRY_BULBASAUR,      0,  320 ; TORTERRA
+	mon_cry CRY_CHARMANDER,    32,  192 ; MONFERNO
+	mon_cry CRY_CHARMANDER,     0,  256 ; INFERNAPE
+	mon_cry CRY_SQUIRTLE,      32,  192 ; PRINPLUP
+	mon_cry CRY_BLASTOISE,      0,  256 ; EMPOLEON
+	mon_cry CRY_VULPIX,      $097, $0a9 ; SERVINE
+	mon_cry CRY_METAPOD,    -$09a, $0d0 ; SERPERIOR
+	mon_cry CRY_METAPOD,    -$3c5, $0f0 ; PIGNITE
+	mon_cry CRY_METAPOD,    -$4c0, $130 ; EMBOAR
+	mon_cry CRY_DIGLETT,     $033, $0d0 ; DEWOTT
+	mon_cry CRY_VULPIX,     -$15c, $100 ; SAMUROTT
 	assert_table_length NUM_POKEMON
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 252
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 253
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 255
-	assert_table_length $ff

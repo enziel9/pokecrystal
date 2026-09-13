@@ -66,7 +66,6 @@ ROMX $0f
 	"Battle Core"
 ROMX $10
 	"bank10"
-	"Evolutions and Attacks"
 ROMX $11
 	"bank11"
 ROMX $12
@@ -165,7 +164,6 @@ ROMX $3b
 ROMX $3c
 	"Songs 3"
 	"Sound Effects"
-	"Cries"
 ROMX $3d
 	"Songs 4"
 ROMX $3e
@@ -193,7 +191,6 @@ ROMX $47
 	"Battle Tower"
 ROMX $48
 	org $4000
-	"Pic Pointers"
 	"Pics 1"
 ROMX $49
 	org $4000
@@ -296,6 +293,16 @@ ROMX $73
 	"Pokedex Entries 129-192"
 ROMX $74
 	"Pokedex Entries 193-251"
+ROMX $75
+	"16-bit ID stuff"
+ROMX $76
+	"Pokedex Entries 257-260"
+ROMX $79
+	org $4000
+	"Pic Pointers"
+	"Base Data and Names"
+ROMX $7a
+	"Evolutions and Attacks"
 ROMX $77
 	"Unown Font"
 	"Print Party"
@@ -317,6 +324,19 @@ ROMX $7e
 ROMX $7f
 	org $7de0
 	"Stadium 2 Checksums"
+
+; Banks $80+ only exist because of the MBC3->MBC30 switch (see
+; RGBFIXFLAGS in the Makefile): MBC30 is the same hardware Japanese/Korean
+; Crystal uses, an unofficial 8-bit-bank-register variant of MBC3,
+; extending ROM from 2MB (128 banks) to 4MB (256 banks) while keeping the
+; same real-time clock. Added once 260+ new species (see
+; constants/pokemon_constants.asm) genuinely filled every original bank.
+ROMX $80
+	"Footprints"
+ROMX $81
+	"Cries"
+ROMX $82
+	"Pics 25"
 WRAM0
 	"Stack"
 	"Audio RAM"
@@ -332,6 +352,8 @@ WRAM0
 	"Overworld Map"
 	align 4
 	"Video"
+	align 5
+	"16-bit WRAM home data"
 WRAMX 1
 	"WRAM 1"
 	"Miscellaneous WRAM 1"
@@ -340,6 +362,8 @@ WRAMX 1
 	"Party"
 WRAMX 2
 	"Pic Animations"
+	align 8
+	"16-bit WRAM tables"
 WRAMX 3
 	"Battle Tower RAM"
 WRAMX 4
@@ -349,8 +373,8 @@ WRAMX 5
 	"GBC Video"
 	org $d300
 	"Battle Animations"
-	org $d800
-	"Mobile RAM"
+	org $d500
+	"Mobile RAM and Pokedex Listings"
 WRAMX 6
 	"Scratch RAM"
 WRAMX 7

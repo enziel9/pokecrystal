@@ -42,11 +42,9 @@ EvolveAfterBattle_MasterLoop:
 	jp z, EvolveAfterBattle_MasterLoop
 
 	ld a, [wEvolutionOldSpecies]
-	dec a
-	ld b, 0
-	ld c, a
-	ld hl, EvosAttacksPointers
-	add hl, bc
+	call GetPokemonIndexFromID
+	ld bc, EvosAttacksPointers - 2
+	add hl, hl
 	add hl, bc
 	ld a, [hli]
 	ld h, [hl]
@@ -70,7 +68,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, [wLinkMode]
 	and a
-	jp nz, .dont_evolve_2
+	jp nz, .dont_evolve_check
 
 	ld a, b
 	cp EVOLVE_ITEM
@@ -78,7 +76,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, [wForceEvolution]
 	and a
-	jp nz, .dont_evolve_2
+	jp nz, .dont_evolve_check
 
 	ld a, b
 	cp EVOLVE_LEVEL
@@ -196,9 +194,10 @@ EvolveAfterBattle_MasterLoop:
 	ld a, $1
 	ld [wMonTriedToEvolve], a
 
-	push hl
-
-	ld a, [hl]
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetPokemonIDFromIndex
 	ld [wEvolutionNewSpecies], a
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
@@ -230,12 +229,9 @@ EvolveAfterBattle_MasterLoop:
 	ld hl, CongratulationsYourPokemonText
 	call PrintText
 
-	pop hl
-
-	ld a, [hl]
+	ld a, [wEvolutionNewSpecies]
 	ld [wCurSpecies], a
 	ld [wTempMonSpecies], a
-	ld [wEvolutionNewSpecies], a
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
 
@@ -298,13 +294,24 @@ EvolveAfterBattle_MasterLoop:
 	ld [wMonType], a
 	call LearnLevelMoves
 	ld a, [wTempSpecies]
-	dec a
 	call SetSeenAndCaughtMon
 
 	ld a, [wTempSpecies]
-	cp UNOWN
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(UNOWN)
+	if HIGH(UNOWN) == 0
+		or h
+	else
+		jr nz, .skip_unown
+		if HIGH(UNOWN) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(UNOWN)
+		endc
+	endc
 	jr nz, .skip_unown
-
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
 	callfar UpdateUnownDex
@@ -319,11 +326,16 @@ EvolveAfterBattle_MasterLoop:
 	ld h, d
 	jp EvolveAfterBattle_MasterLoop
 
+.dont_evolve_check
+	ld a, b
+	cp EVOLVE_STAT
+	jr nz, .dont_evolve_2
 .dont_evolve_1
 	inc hl
 .dont_evolve_2
 	inc hl
 .dont_evolve_3
+	inc hl
 	inc hl
 	jp .loop
 
@@ -347,7 +359,7 @@ EvolveAfterBattle_MasterLoop:
 UpdateSpeciesNameIfNotNicknamed:
 	ld a, [wCurSpecies]
 	push af
-	ld a, [wBaseDexNo]
+	ld a, [wBaseSpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
 	pop af
@@ -380,7 +392,6 @@ CancelEvolution:
 	ld hl, StoppedEvolvingText
 	call PrintText
 	call ClearTilemap
-	pop hl
 	jp EvolveAfterBattle_MasterLoop
 
 IsMonHoldingEverstone:
@@ -413,20 +424,14 @@ EvolvingText:
 LearnLevelMoves:
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
-	dec a
-	ld b, 0
-	ld c, a
-	ld hl, EvosAttacksPointers
-	add hl, bc
+	call GetPokemonIndexFromID
+	ld bc, EvosAttacksPointers - 2
+	add hl, hl
 	add hl, bc
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
-.skip_evos
-	ld a, [hli]
-	and a
-	jr nz, .skip_evos
+	call SkipEvolutions
 
 .find_move
 	ld a, [hli]
@@ -480,21 +485,15 @@ FillMoves:
 	push hl
 	push de
 	push bc
-	ld hl, EvosAttacksPointers
-	ld b, 0
+	ld bc, EvosAttacksPointers - 2
 	ld a, [wCurPartySpecies]
-	dec a
-	add a
-	rl b
-	ld c, a
+	call GetPokemonIndexFromID
+	add hl, hl
 	add hl, bc
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-.GoToAttacks:
-	ld a, [hli]
-	and a
-	jr nz, .GoToAttacks
+	call SkipEvolutions
 	jr .GetLevel
 
 .NextMove:
@@ -601,50 +600,62 @@ EvoFlagAction:
 	pop de
 	ret
 
-GetPreEvolution:
-; Find the first mon to evolve into wCurPartySpecies.
-
-; Return carry and the new species in wCurPartySpecies
-; if a pre-evolution is found.
-
-	ld c, 0
-.loop ; For each Pokemon...
-	ld hl, EvosAttacksPointers
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-.loop2 ; For each evolution...
-	ld a, [hli]
-	and a
-	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
-	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
-	jr nz, .not_tyrogue
-	inc hl
-
-.not_tyrogue
-	inc hl
+GetLowestEvolutionStage:
+; Return the first mon to evolve into wCurPartySpecies.
+; Instead of looking it up, we just load it from a table. This is a lot more efficient.
 	ld a, [wCurPartySpecies]
-	cp [hl]
-	jr z, .found_preevo
-	inc hl
-	ld a, [hl]
-	and a
-	jr nz, .loop2
-
-.no_evolve
-	inc c
-	ld a, c
-	cp NUM_POKEMON
-	jr c, .loop
-	and a
+	call GetPokemonIndexFromID
+	ld bc, FirstEvoStages - 2
+	add hl, hl
+	add hl, bc
+	ld a, BANK(FirstEvoStages)
+	call GetFarWord
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
 	ret
 
-.found_preevo
-	inc c
-	ld a, c
-	ld [wCurPartySpecies], a
-	scf
+SkipEvolutions::
+; Receives a pointer to the evos and attacks for a mon in hl, and skips to the attacks.
+	ld a, [hli]
+	and a
+	ret z
+	cp EVOLVE_STAT
+	jr nz, .no_extra_skip
+	inc hl
+.no_extra_skip
+	inc hl
+	inc hl
+	inc hl
+	jr SkipEvolutions
+
+DetermineEvolutionItemResults::
+; in: de: pointer to evos and attacks struct, wCurItem: item
+; out: de: species ID or zero; a, hl: clobbered
+	ld h, d
+	ld l, e
+	ld de, 0
+.loop
+	ld a, [hli]
+	and a
+	ret z
+	cp EVOLVE_STAT
+	jr nz, .no_extra_increase
+	inc hl
+.no_extra_increase
+	cp EVOLVE_ITEM ; will fail if the EVOLVE_STAT check passed
+	jr nz, .no_item_check
+	ld a, [wCurItem]
+	cp [hl]
+	jr z, .get_species
+.no_item_check
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
+
+.get_species
+	inc hl
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
 	ret
