@@ -110,10 +110,47 @@ DoBattle:
 	call SpikesDamage
 
 .not_linked_2
+	call StartAutomaticBattleWeather
 	jp BattleTurn
 
 .tutorial_debug
 	jp BattleMenu
+
+StartAutomaticBattleWeather:
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
+	ld a, [wCurWeather]
+	and a
+	ret z
+	cp OW_WEATHER_SNOW
+	ret z ; no in-battle hail effect exists in Gen 2
+	cp OW_WEATHER_SANDSTORM
+	jr z, .sandstorm
+	cp OW_WEATHER_SUNLIGHT
+	jr z, .sunlight
+
+; OW_WEATHER_RAIN or OW_WEATHER_THUNDERSTORM
+	ld a, WEATHER_RAIN
+	ld hl, StartedToRainText
+	jr .got_weather
+
+.sandstorm
+	ld a, WEATHER_SANDSTORM
+	ld hl, SandstormBrewedText
+	jr .got_weather
+
+.sunlight
+	ld a, WEATHER_SUN
+	ld hl, SunlightTurnedHarshText
+
+.got_weather
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	call StdBattleTextbox
+	jp EmptyBattleTextbox
 
 WildFled_EnemyFled_LinkBattleCanceled:
 	call SafeLoadTempTilemapToTilemap

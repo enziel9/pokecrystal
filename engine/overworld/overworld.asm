@@ -488,8 +488,12 @@ ArrangeUsedSprites:
 	call GetSpriteLength
 
 ; There are only two tables, so don't go any further than that.
+; Tiles $fe-$ff are reserved for overworld weather particle graphics
+; (see engine/events/weather.asm), so stop short of those too.
 	add b
 	jr c, .quit
+	cp WEATHER_TILE_1
+	jr nc, .quit
 
 	ld [hl], b
 	ld b, a

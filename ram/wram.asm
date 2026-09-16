@@ -3396,7 +3396,11 @@ wBackupWarpNumber:: db
 wBackupMapGroup::   db
 wBackupMapNumber::  db
 
-	ds 3
+wCurWeather:: db
+wOverworldWeatherTimer:: db
+wWeatherParticleTile:: db
+wWeatherScratchX:: db
+wWeatherParticleY:: ds NUM_WEATHER_PARTICLES
 
 wLastSpawnMapGroup:: db
 wLastSpawnMapNumber:: db
@@ -3773,3 +3777,11 @@ wWindowStack:: ds $1000 - 1
 wWindowStackBottom:: ds 1
 
 ENDSECTION
+
+; standalone (not squeezed into an existing struct/union) so it can't be
+; clobbered by whatever else uses that space -- generic per-day random
+; weather roll, see RandomWeatherMapList in engine/events/weather.asm
+SECTION "Weather Random", WRAMX
+
+wWeatherRandomDay:: db
+wWeatherRandomIntensity:: ds NUM_RANDOM_WEATHER_MAPS
